@@ -35,7 +35,7 @@ var common = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Achoo app'
+      title: 'Achoo! Delivering health to your door'
     })
   ]
 };
