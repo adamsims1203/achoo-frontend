@@ -16,9 +16,6 @@
           ]
         }
       }
-    },
-    "build": {
-      "optional": ["optimisation", "minification"]
     }
   }
 }
