@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
 
 export default class Cart extends Component {
+  static propTypes = {
+    products: React.PropTypes.array.isRequired,
+    total: React.PropTypes.number.isRequired,
+    onCheckoutClicked: React.PropTypes.func.isRequired,
+  };
+
+  renderProduct(product) {
+    return (
+      <div key={`product${product.id}`}>
+        {product.name} - ${product.price} x {product.quantity}
+      </div>
+    );
+  }
+
   render() {
     const products = this.props.products;
     const hasProducts = products.length > 0;
@@ -19,14 +33,6 @@ export default class Cart extends Component {
           disabled={hasProducts ? '' : 'disabled'}>
           Checkout
         </button>
-      </div>
-    );
-  }
-
-  renderProduct(product) {
-    return (
-      <div key={`product${product.id}`}>
-        {product.name} - ${product.price} x {product.quantity}
       </div>
     );
   }

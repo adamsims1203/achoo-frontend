@@ -3,6 +3,13 @@ import CartActions from '../actions/CartActions';
 import ProductItem from './ProductItem';
 
 export default class ProductItemContainer extends Component {
+  static propTypes = {
+    product: React.PropTypes.shape({
+      name: React.PropTypes.string,
+      price: React.PropTypes.number,
+    }).isRequired,
+  };
+
   onAddToCartClicked = () => {
     CartActions.addToCart(this.props.product);
   }

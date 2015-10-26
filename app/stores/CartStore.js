@@ -11,7 +11,7 @@ export default class CartStore {
   }
 
   onAddToCart(product) {
-    var id = product.id;
+    const id = product.id;
     product.quantity = id in this.products ? this.products[id].quantity + 1 : 1;
     this.products[id] = Object.assign({}, product);
   }
@@ -21,7 +21,7 @@ export default class CartStore {
   }
 
   onFinishCheckout(products) {
-    console.log('You bought:', products);
+    console.log('You bought:', products); // eslint-disable-line no-console
   }
 
   static getAddedProducts() {

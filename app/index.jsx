@@ -4,8 +4,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 
-main();
-
 function main() {
   const app = document.createElement('div');
 
@@ -13,3 +11,5 @@ function main() {
 
   ReactDOM.render(<App />, app);
 }
+
+main();

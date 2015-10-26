@@ -6,6 +6,7 @@ import ProductsList from './ProductsList';
 
 @connectToStores
 export default class ProductsListContainer extends Component {
+  /* eslint-disable react/sort-comp */
   static getStores() {
     return [ProductStore];
   }
@@ -13,6 +14,9 @@ export default class ProductsListContainer extends Component {
   static getPropsFromStores() {
     return ProductStore.getState();
   }
+  /* eslint-enable react/sort-comp */
+
+  static propTypes = { products: React.PropTypes.array };
 
   componentDidMount() {
     ProductActions.fetchProducts();

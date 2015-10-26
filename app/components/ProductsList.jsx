@@ -2,6 +2,19 @@ import React, { Component } from 'react';
 import ProductItemContainer from './ProductItemContainer';
 
 export default class ProductsList extends Component {
+  static propTypes = {
+    products: React.PropTypes.array,
+    errorMessage: React.PropTypes.string,
+  };
+
+  renderProduct(product) {
+    return (
+      <li key={`product${product.id}`}>
+        <ProductItemContainer product={product} />
+      </li>
+    );
+  }
+
   render() {
     if (this.props.errorMessage) {
       return <div>Something is wrong</div>;
@@ -14,13 +27,5 @@ export default class ProductsList extends Component {
     }
 
     return <ul>{products.map(this.renderProduct)}</ul>;
-  }
-
-  renderProduct(product) {
-    return (
-      <li key={`product${product.id}`}>
-        <ProductItemContainer product={product} />
-      </li>
-    );
   }
 }

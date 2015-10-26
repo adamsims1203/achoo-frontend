@@ -6,6 +6,7 @@ import Cart from './Cart';
 
 @connectToStores
 export default class CartContainer extends Component {
+  /* eslint-disable react/sort-comp */
   static getStores() {
     return [CartStore];
   }
@@ -13,9 +14,15 @@ export default class CartContainer extends Component {
   static getPropsFromStores() {
     return {
       products: CartStore.getAddedProducts(),
-      total: CartStore.getTotal()
+      total: CartStore.getTotal(),
     };
   }
+  /* eslint-enable react/sort-comp */
+
+  static propTypes = {
+    products: React.PropTypes.array.isRequired,
+    total: React.PropTypes.number.isRequired,
+  };
 
   onCheckoutClicked = () => {
     const products = this.props.products;
