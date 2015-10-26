@@ -3,27 +3,33 @@ import uuid from 'node-uuid';
 const mockData = [
   {
     id: uuid.v4(),
-    name: 'Hydrocodone'
+    name: 'Hydrocodone',
+    price: 10
   },
   {
     id: uuid.v4(),
-    name: 'Lisinopril'
+    name: 'Lisinopril',
+    price: 20
   },
   {
     id: uuid.v4(),
-    name: 'Medrol'
+    name: 'Medrol',
+    price: 30
   },
   {
     id: uuid.v4(),
-    name: 'Prozac'
+    name: 'Prozac',
+    price: 40
   },
   {
     id: uuid.v4(),
-    name: 'Xanax'
+    name: 'Xanax',
+    price: 50
   },
   {
     id: uuid.v4(),
-    name: 'Zoloft'
+    name: 'Zoloft',
+    price: 60
   }
 ];
 

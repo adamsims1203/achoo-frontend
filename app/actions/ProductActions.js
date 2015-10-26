@@ -5,7 +5,10 @@ import ProductSource from '../sources/ProductSource';
 @createActions(alt)
 export default class ProductActions {
   constructor() {
-    this.generateActions('updateProducts');
+    this.generateActions(
+      'updateProducts',
+      'productsFailed'
+    );
   }
 
   fetchProducts() {
@@ -18,9 +21,5 @@ export default class ProductActions {
       .catch((errorMessage) => {
         this.actions.productsFailed(errorMessage);
       });
-  }
-
-  productsFailed(errorMessage) {
-    this.dispatch(errorMessage);
   }
 }
