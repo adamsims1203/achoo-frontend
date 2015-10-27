@@ -36,6 +36,7 @@
     "eslint-plugin-react": "^3.6.3",
     "eslint-plugin-smells": "^1.0.1",
     "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.4",
     "html-webpack-plugin": "^1.6.2",
     "react-transform-hmr": "^1.0.1",
     "style-loader": "^0.13.0",
@@ -45,8 +46,11 @@
   },
   "dependencies": {
     "alt": "^0.17.6",
+    "history": "^1.12.6",
     "node-uuid": "^1.4.3",
+    "normalize.css": "^3.0.3",
     "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "react-dom": "^0.14.0",
+    "react-router": "^1.0.0-rc3"
   }
 }

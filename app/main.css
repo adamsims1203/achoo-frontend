@@ -1,4 +1,164 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+*:focus {
+  outline: none;
+}
+
+a {
+  color: #1bafe0;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #158cb3;
+}
+
 body {
-  background: cornsilk;
-  font-family: sans-serif;
+  /*background: #16aeda;*/
+  background: #60c0e1;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+}
+
+.PageHeader {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 1em 1.5em;
+}
+
+.Logo {
+  float: left;
+}
+
+.Navigation {
+  float: right;
+}
+
+.NavigationLink {
+  display: block;
+  float: left;
+  color: #dcf3fa;
+  line-height: 28px;
+  padding: 4px 12px;
+  margin-left: 8px;
+  border-radius: 4px;
+  transition: all .15s ease-in-out
+}
+
+.NavigationLink:hover {
+  color: white;
+  background: rgba(0, 0, 0, 0.05)
+}
+
+.Hero {
+  position: relative;
+  text-align: center;
+  margin: 6em 0;
+}
+
+.HeroLeftHand, .HeroRightHand {
+  position: absolute;
+  top: 0;
+  height: 171px;
+  width: 300px;
+  margin: 0;
+}
+
+.HeroLeftHand {
+  left: -1px;
+}
+
+.HeroRightHand {
+  right: -1px;
+}
+
+.Hero h1 {
+  max-width: 500px;
+  line-height: 1.2em;
+  font-size: 3em;
+  font-weight: normal;
+  margin: 0 auto 0.2em;
+}
+
+.Hero p {
+  max-width: 500px;
+  line-height: 1em;
+  margin: 0 auto 1em;
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #106986;
+}
+
+/*.Hero .Logo {
+  max-width: 270px;
+  margin: 0 auto 0.2em;
+}*/
+
+.SearchBox {
+  position: relative;
+  width: 540px;
+  padding: 8px 0;
+  margin: 0 auto;
+}
+
+.SearchBox input {
+  -webkit-transition: all ease-in-out .15s;
+  transition: all ease-in-out .15s;
+  font-size: 18px;
+  line-height: 22px;
+  padding: 0 16px;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.SearchBox button {
+  background-image: url('./assets/icon-search.svg');
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 50%;
+  height: 50px;
+  color: #fff;
+  text-indent: -9999em;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  font-size: 18px;
+  padding: 0 1.5em;
+  position: absolute;
+  top: 8px;
+  right: 2px;
+  -webkit-transition: all ease-in-out .15s;
+  transition: all ease-in-out .15s
+}
+
+.SearchBox button:hover {
+  background-color: transparent;
+  opacity: .8
+}
+
+.PageFooterWrapper {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding: 3em 0;
+}
+
+.PageFooter {
+  overflow: hidden;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 0 0 20px;
+  font-size: .875em;
+  line-height: 1.6em;
 }

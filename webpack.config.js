@@ -38,6 +38,11 @@ var common = {
     ],
     loaders: [
       {
+        test: /\.svg$/,
+        loaders: ['file?name=assets/[name][hash].[ext]'],
+        include: APP_PATH
+      },
+      {
         test: /\.jsx?$/,
         loaders: ['babel'],
         include: APP_PATH
