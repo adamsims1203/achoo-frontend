@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Cart extends Component {
   static propTypes = {
     products: React.PropTypes.array.isRequired,
-    total: React.PropTypes.number.isRequired,
+    total: React.PropTypes.string.isRequired,
     onCheckoutClicked: React.PropTypes.func.isRequired,
   };
 

@@ -21,7 +21,7 @@ export default class CartContainer extends Component {
 
   static propTypes = {
     products: React.PropTypes.array.isRequired,
-    total: React.PropTypes.number.isRequired,
+    total: React.PropTypes.string.isRequired,
   };
 
   onCheckoutClicked = () => {

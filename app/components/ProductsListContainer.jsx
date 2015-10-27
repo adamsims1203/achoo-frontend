@@ -16,13 +16,21 @@ export default class ProductsListContainer extends Component {
   }
   /* eslint-enable react/sort-comp */
 
-  static propTypes = { products: React.PropTypes.array };
+  static propTypes = {
+    products: React.PropTypes.array,
+    errorMessage: React.PropTypes.string,
+  };
 
   componentDidMount() {
     ProductActions.fetchProducts();
   }
 
   render() {
-    return <ProductsList products={this.props.products} />;
+    return (
+      <ProductsList
+        products={this.props.products}
+        errorMessage={this.props.errorMessage}
+      />
+    );
   }
 }
