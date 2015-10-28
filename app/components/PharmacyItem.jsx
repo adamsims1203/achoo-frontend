@@ -5,7 +5,6 @@ export default class PharmacyItem extends Component {
     pharmacy: React.PropTypes.shape({
       name: React.PropTypes.string,
     }).isRequired,
-    onAddToCartClicked: React.PropTypes.func.isRequired,
   };
 
   render() {

@@ -2,6 +2,7 @@ import leftHand from '../assets/left-hand.svg';
 import rightHand from '../assets/right-hand.svg';
 
 import React, { Component } from 'react';
+import SearchBoxContainer from './SearchBoxContainer';
 
 export default class Hero extends Component {
   render() {
@@ -15,10 +16,7 @@ export default class Hero extends Component {
         </figure>
         <h1>Get your drugs, junkie!</h1>
         <p>Delivering health to your door</p>
-        <div className="SearchBox">
-          <input type="search" placeholder="Search your drug, addict" />
-          <button type="submit">Search</button>
-        </div>
+        <SearchBoxContainer />
       </section>
     );
   }
