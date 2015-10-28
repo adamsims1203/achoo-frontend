@@ -26,6 +26,6 @@ export default class ProductsList extends Component {
       return <div>Loading products...</div>;
     }
 
-    return <ul>{products.map(this.renderProduct)}</ul>;
+    return <ul className="List ProductList">{products.map(this.renderProduct)}</ul>;
   }
 }

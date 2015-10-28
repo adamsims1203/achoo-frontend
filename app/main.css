@@ -29,6 +29,15 @@ body {
   font-size: 1em;
 }
 
+button {
+  background: #60c0e1;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  padding: 5px 8px;
+  border-bottom: 4px solid #106986;
+}
+
 .PageHeader {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   margin: 0 auto;
@@ -121,6 +130,7 @@ body {
   height: 50px;
   border: 1px solid #e5e5e5;
   border-radius: 4px;
+  color: black;
   box-sizing: border-box;
 }
 
@@ -149,6 +159,14 @@ body {
   opacity: .8
 }
 
+.Content {
+  width: 100%;
+  background: #F4F4F4;
+  overflow: auto;
+  padding: 15px 50px;
+  text-align: center;
+}
+
 .PageFooterWrapper {
   border-top: 1px solid rgba(255,255,255,0.15);
   padding: 3em 0;
@@ -161,4 +179,53 @@ body {
   padding: 0 0 0 20px;
   font-size: .875em;
   line-height: 1.6em;
+}
+
+.List {
+  list-style-type: none;
+  width: 70%;
+  margin: 0;
+  display: inline-block;
+}
+
+.List li {
+  background: white;
+  padding: 15px 30px;
+  margin-bottom: 10px;
+  text-align: left;
+  color: black;
+  border-bottom: 4px solid #e5e5e5;
+  border-radius: 4px;
+  color: black;
+  overflow: auto;
+  vertical-align: middle;
+}
+
+.List li:last-child {
+  margin-bottom: 0px;
+}
+
+.ProductList {
+  width: 50%;
+}
+
+.PharmacyItemImage {
+  float: left;
+  height: 100px;
+  width: 100px;
+  margin-right: 15px;
+  border-radius: 4px;
+}
+
+.Cart {
+  display: inline-block;
+  text-align: left;
+  width: 20%;
+  margin-left: 10px;
+  padding: 15px 30px;
+  background: white;
+  color: black;
+  border-bottom: 4px solid #e5e5e5;
+  border-radius: 4px;
+  vertical-align: top;
 }

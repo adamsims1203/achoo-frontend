@@ -24,7 +24,7 @@ export default class Cart extends Component {
       products.map(this.renderProduct);
 
     return (
-      <div>
+      <div className="Cart">
         <div>Your cart</div>
         <div>{nodes}</div>
         <div>Total: ${this.props.total}</div>

@@ -13,7 +13,8 @@ export default class PharmacyItem extends Component {
 
     return (
       <div>
-        <div>{pharmacy.name}</div>
+        <img className="PharmacyItemImage" src={pharmacy.imageUrl}></img>
+        <div className="PharmacyItemName">{pharmacy.name}</div>
       </div>
     );
   }

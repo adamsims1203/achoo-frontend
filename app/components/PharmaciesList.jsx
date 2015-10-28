@@ -26,6 +26,6 @@ export default class ProductsList extends Component {
       return <div>Loading pharmacies...</div>;
     }
 
-    return <ul>{pharmacies.map(this.renderPharmacy)}</ul>;
+    return <ul className="List">{pharmacies.map(this.renderPharmacy)}</ul>;
   }
 }
