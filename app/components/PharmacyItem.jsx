@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 export default class PharmacyItem extends Component {
   static propTypes = {
@@ -13,7 +14,9 @@ export default class PharmacyItem extends Component {
     return (
       <div className="ListItem">
         <img className="ListItemImage" src={pharmacy.imageUrl}></img>
-        <div className="ListItemName">{pharmacy.name}</div>
+        <Link to={`/pharmacy/${pharmacy.name}`}>
+          <div className="ListItemName">{pharmacy.name}</div>
+        </Link>
       </div>
     );
   }

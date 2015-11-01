@@ -236,6 +236,12 @@ button[disabled] {
   margin-bottom: 0px;
 }
 
+
+.PharmacyTitle {
+  color: #000;
+  text-align: center;
+}
+
 .ProductList {
   width: 50%;
 }

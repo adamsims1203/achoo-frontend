@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import Hero from './Hero';
-import PharmaciesListContainer from './PharmaciesListContainer';
 import ProductsListContainer from './ProductsListContainer';
 import CartContainer from './CartContainer'
 
-export default class Home extends Component {
-  render() {
+export default class Pharmacy extends Component {
+   render() {
+    let { name } = this.props.params
+
     return (
       <div className="PageContent">
-        <Hero />
+        <h1 className="PharmacyTitle">{name}</h1>
         <div className="Content">
-        	<PharmaciesListContainer />
+        	<ProductsListContainer />
+          <CartContainer />
         </div>
       </div>
     );
