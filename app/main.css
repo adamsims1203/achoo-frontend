@@ -71,18 +71,11 @@ button[disabled] {
 }
 
 .PageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  margin: 0 auto;
-  overflow: hidden;
   padding: 1em 1.5em;
-}
-
-.Logo {
-  float: left;
-}
-
-.Navigation {
-  float: right;
 }
 
 .NavigationLink {
