@@ -10,8 +10,8 @@ export default class Home extends Component {
       <div className="PageContent">
         <Hero />
         <div className="Content">
-        	<ProductsListContainer />
-          <CartContainer />
+        	<PharmaciesListContainer />
+          
         </div>
       </div>
     );
