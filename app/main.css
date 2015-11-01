@@ -103,7 +103,7 @@ button[disabled] {
 
 .HeroLeftHand, .HeroRightHand {
   position: absolute;
-  top: 0;
+  top: 6em;
   height: 171px;
   width: 300px;
   margin: 0;
