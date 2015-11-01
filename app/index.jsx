@@ -8,6 +8,7 @@ import createBrowserHistory from 'history/lib/createBrowserHistory';
 import App from './components/App';
 import Home from './components/Home';
 import LoginContainer from './components/LoginContainer';
+import SignupContainer from './components/SignupContainer';
 
 function main() {
   const app = document.createElement('div');
@@ -20,6 +21,7 @@ function main() {
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
         <Route path="login" component={LoginContainer} />
+        <Route path="signup" component={SignupContainer} />
       </Route>
     </Router>
   ), app);

@@ -180,7 +180,7 @@ button[disabled] {
   opacity: .8
 }
 
-.LoginBox {
+.FormBox {
   background: white;
   border-bottom: 4px solid #e5e5e5;
   border-radius: 4px;
@@ -188,22 +188,26 @@ button[disabled] {
   padding: 20px 40px 40px 40px;
 }
 
+.SignupForm,
 .LoginForm {
   display: flex;
   flex-direction: column;
   width: 380px;
 }
 
+.SignupForm *,
 .LoginForm * {
   margin-bottom: 7px;
   padding: 5px;
   height: 35px;
 }
 
+.SignupForm input,
 .LoginForm input {
   color: black;
 }
 
+.SignupForm button,
 .LoginForm button {
   height: 45px;
 }
