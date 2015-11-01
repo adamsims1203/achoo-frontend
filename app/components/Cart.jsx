@@ -9,8 +9,9 @@ export default class Cart extends Component {
 
   renderProduct(product) {
     return (
-      <div key={`product${product.id}`}>
-        {product.name} - ${product.price} x {product.quantity}
+      <div className="CartProductLine" key={`product${product.id}`}>
+        <div>{product.name}</div> 
+        <div>{product.quantity} x ${product.price}</div>
       </div>
     );
   }
@@ -25,14 +26,16 @@ export default class Cart extends Component {
 
     return (
       <div className="Cart">
-        <div>Your cart</div>
+        <h3>Your cart</h3>
         <div>{nodes}</div>
-        <div>Total: ${this.props.total}</div>
-        <button
-          onClick={this.props.onCheckoutClicked}
-          disabled={hasProducts ? '' : 'disabled'}>
-          Checkout
-        </button>
+        <div className="CartBottomLine">
+          <div>Total: ${this.props.total}</div>
+          <button
+            onClick={this.props.onCheckoutClicked}
+            disabled={hasProducts ? '' : 'disabled'}>
+            Checkout
+          </button>
+        </div>
       </div>
     );
   }

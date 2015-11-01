@@ -13,9 +13,13 @@ export default class ProductItem extends Component {
     const product = this.props.product;
 
     return (
-      <div>
-        <div>{product.name} - ${product.price}</div>
-        <button onClick={this.props.onAddToCartClicked}>Add to cart</button>
+      <div className="ListItem">
+        <img className="ListItemImage" src={product.imageUrl}></img>
+        <div className="ListItemName">{product.name}</div>
+        <div className="ListItemSubcontainer">
+          <div className="ListItemPrice PriceTag">${product.price}</div>
+          <button className="CartButton" onClick={this.props.onAddToCartClicked}>Add to cart</button>
+        </div>
       </div>
     );
   }

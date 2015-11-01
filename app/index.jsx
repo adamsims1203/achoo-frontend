@@ -11,6 +11,7 @@ import LoginContainer from './components/LoginContainer';
 
 function main() {
   const app = document.createElement('div');
+  app.className = "App";
 
   document.body.appendChild(app);
 

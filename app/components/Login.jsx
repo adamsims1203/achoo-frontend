@@ -18,11 +18,18 @@ export default class Login extends Component {
 
   render() {
     return (
-      <form role="form">
-        <input type="text" valueLink={this.makeValueLink('email')} placeholder="Email" />
-        <input type="password" valueLink={this.makeValueLink('password')} placeholder="Password" />
-        <button type="submit" onClick={this.props.onLoginClicked}>Login</button>
-      </form>
+      <div className="PageContent">
+        <div className="Content">
+          <div className="LoginBox">
+            <h1>Login</h1>
+            <form className="LoginForm" role="form">
+              <input type="text" valueLink={this.makeValueLink('email')} placeholder="Email" />
+              <input type="password" valueLink={this.makeValueLink('password')} placeholder="Password" />
+              <button type="submit" onClick={this.props.onLoginClicked}>Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
     );
   }
 }

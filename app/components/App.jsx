@@ -5,7 +5,7 @@ import Footer from './Footer';
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <div className="AppContainer">
         <Header />
         {this.props.children}
         <Footer />

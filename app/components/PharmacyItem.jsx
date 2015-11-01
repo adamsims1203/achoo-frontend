@@ -11,9 +11,9 @@ export default class PharmacyItem extends Component {
     const pharmacy = this.props.pharmacy;
 
     return (
-      <div>
-        <img className="PharmacyItemImage" src={pharmacy.imageUrl}></img>
-        <div className="PharmacyItemName">{pharmacy.name}</div>
+      <div className="Item">
+        <img className="ItemImage" src={pharmacy.imageUrl}></img>
+        <div className="ItemName">{pharmacy.name}</div>
       </div>
     );
   }
