@@ -364,3 +364,10 @@ button[disabled] {
   font-size: .875em;
   line-height: 1.6em;
 }
+
+.ErrorTitle {
+  font-size: 5em;
+  font-weight: bold;
+  margin: 10px 0px;
+  letter-spacing: -3px; 
+}

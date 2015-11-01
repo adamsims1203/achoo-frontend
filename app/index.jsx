@@ -9,6 +9,7 @@ import App from './components/App';
 import Home from './components/Home';
 import LoginContainer from './components/LoginContainer';
 import SignupContainer from './components/SignupContainer';
+import NotFound from './components/NotFound';
 
 function main() {
   const app = document.createElement('div');
@@ -22,6 +23,7 @@ function main() {
         <IndexRoute component={Home} />
         <Route path="login" component={LoginContainer} />
         <Route path="signup" component={SignupContainer} />
+        <Route path="*" component={NotFound}/>
       </Route>
     </Router>
   ), app);
