@@ -327,6 +327,17 @@ button[disabled] {
 .CartProductLine {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.CartProductLine button {
+  background: none;
+  border: none;
+  color: #E7E7E7;
+}
+
+.CartProductLine button:hover {
+  color: red;
 }
 
 .CartBottomLine {

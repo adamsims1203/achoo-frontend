@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CartItemContainer from './CartItemContainer';
 
 export default class Cart extends Component {
   static propTypes = {
@@ -9,10 +10,7 @@ export default class Cart extends Component {
 
   renderProduct(product) {
     return (
-      <div className="CartProductLine" key={`product${product.id}`}>
-        <div>{product.name}</div> 
-        <div>{product.quantity} x ${product.price}</div>
-      </div>
+      <CartItemContainer product={product} />
     );
   }
 

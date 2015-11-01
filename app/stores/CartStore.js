@@ -16,6 +16,12 @@ export default class CartStore {
     this.products[id] = Object.assign({}, product);
   }
 
+  onRemoveFromCart(product) {
+    const id = product.id;
+    console.log('Delete ' + id)
+    delete this.products[id];
+  }
+
   onCheckout() {
     this.products = {};
   }

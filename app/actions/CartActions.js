@@ -7,6 +7,7 @@ export default class CartActions {
   constructor() {
     this.generateActions(
       'addToCart',
+      'removeFromCart',
       'finishCheckout',
       'cartFailed'
     );
