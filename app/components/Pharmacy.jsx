@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PharmacyDetail from './PharmacyDetail'
 import ProductsListContainer from './ProductsListContainer';
 import CartContainer from './CartContainer';
 
@@ -8,7 +9,7 @@ export default class Pharmacy extends Component {
 
     return (
       <div className="PageContent">
-        <h1 className="PharmacyTitle">{id}</h1>
+        <PharmacyDetail />
         <div className="Content">
         	<ProductsListContainer />
           <CartContainer />

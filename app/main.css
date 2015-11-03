@@ -195,6 +195,7 @@ body {
   list-style-type: none;
   width: 70%;
   margin: 0;
+  padding: 0px;
   display: inline-block;
 }
 
@@ -214,9 +215,39 @@ body {
   margin-bottom: 0;
 }
 
-.PharmacyTitle {
-  color: #34464c;
-  text-align: center;
+.PharmacyDetail {
+  display: flex;
+  justify-content: center;
+  padding: 2em 50px;
+  background: #60c0e1;
+}
+
+.PharmacyDetailContainer {
+  display: flex;
+  width: 70%;
+}
+
+.PharmacyDetailContainer div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.PharmacyDetailContainer h1 {
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+.PharmacyDetailContainer p {
+  color: #E7E7E7;
+  margin: 0px;
+  margin-bottom: 5px;
+}
+
+.PharmacyDetailContainer img {
+  height: 150px;
+  width: 150px;
+  border-radius: 4px;
 }
 
 .ProductList {
@@ -412,4 +443,31 @@ body {
 .PrimaryButton:disabled {
   background: #9fd0e0;
   border-bottom: 4px solid #5495ab;
+}
+
+/* Rating */
+
+.static-rating-star,
+.rating-star {        
+  display: block;
+  float: left;        
+  width: 24px;
+  height: 24px;
+  background: url('./assets/achoo-star-icon-gray.svg');
+}
+
+.static-rating-star.SELECTED {
+  background: url('./assets/achoo-star-icon-orange.svg');
+}
+
+.rating-input {
+  position: absolute;
+  left: 0;
+  top: -50px;
+}
+
+.rating-star:hover,
+.rating-star:hover ~ .rating-star,
+.rating-input:checked ~ .rating-star {
+  background: url('./assets/achoo-star-icon-gray.svg');
 }
