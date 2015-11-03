@@ -14,7 +14,7 @@ export default class PharmacyItem extends Component {
     return (
       <div className="ListItem">
         <img className="ListItemImage" src={pharmacy.imageUrl}></img>
-        <Link to={`/pharmacy/${pharmacy.name}`}>
+        <Link to={`/pharmacies/${pharmacy.id}`}>
           <div className="ListItemName">{pharmacy.name}</div>
         </Link>
       </div>

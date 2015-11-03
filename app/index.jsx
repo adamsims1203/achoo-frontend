@@ -10,12 +10,11 @@ import Home from './components/Home';
 import Pharmacy from './components/Pharmacy';
 import LoginContainer from './components/LoginContainer';
 import SignupContainer from './components/SignupContainer';
-import ProductsListContainer from './components/ProductsListContainer';
 import NotFound from './components/NotFound';
 
 function main() {
   const app = document.createElement('div');
-  app.className = "App";
+  app.className = 'App';
 
   document.body.appendChild(app);
 
@@ -25,7 +24,7 @@ function main() {
         <IndexRoute component={Home} />
         <Route path="login" component={LoginContainer} />
         <Route path="signup" component={SignupContainer} />
-        <Route path="pharmacy/:name" component={Pharmacy} />
+        <Route path="pharmacies/:id" component={Pharmacy} />
         <Route path="*" component={NotFound}/>
       </Route>
     </Router>

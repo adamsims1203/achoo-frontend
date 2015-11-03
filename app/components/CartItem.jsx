@@ -15,7 +15,7 @@ export default class CartItem extends Component {
 
     return (
       <div className="CartProductLine" key={`product${product.id}`}>
-        <div>{product.name}</div> 
+        <div>{product.name}</div>
         <div>{product.quantity} x ${product.price} <button onClick={this.props.onRemoveFromCartClicked}>x</button></div>
       </div>
     );

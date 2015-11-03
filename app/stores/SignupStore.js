@@ -10,7 +10,7 @@ export default class SignupStore {
     this.firstname = '';
     this.lastname = '';
     this.email = '';
-    this.password = 
+    this.password =
     this.password_repeat = '';
     this.jwt = null;
     this.errorMessage = null;
@@ -21,7 +21,7 @@ export default class SignupStore {
   }
 
   onSignup() {
-    
+
   }
 
   onFinishLSignup(jwt) {
@@ -31,5 +31,4 @@ export default class SignupStore {
   onSignupFailed(errorMessage) {
     this.errorMessage = errorMessage;
   }
-  
 }

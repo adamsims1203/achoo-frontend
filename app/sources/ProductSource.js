@@ -1,4 +1,3 @@
-import uuid from 'node-uuid';
 import PharmacySource from './PharmacySource';
 
 export default class ProductSource {

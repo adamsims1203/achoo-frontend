@@ -6,7 +6,7 @@ export default class Signup extends Component {
     lastname: React.PropTypes.string.isRequired,
     email: React.PropTypes.string.isRequired,
     password: React.PropTypes.string.isRequired,
-    password_repeat: React.PropTypes.string.isRequired,
+    passwordRepeat: React.PropTypes.string.isRequired,
     errorMessage: React.PropTypes.string,
     onUpdateFormValue: React.PropTypes.func.isRequired,
     onSignupClicked: React.PropTypes.func.isRequired,
@@ -24,14 +24,28 @@ export default class Signup extends Component {
       <div className="PageContent">
         <div className="Content">
           <div className="FormBox">
-            <h1>Signup</h1>
             <form className="SignupForm" role="form">
-              <input type="text" valueLink={this.makeValueLink('firstname')} placeholder="First name" />
-              <input type="text" valueLink={this.makeValueLink('lastname')} placeholder="Last name" />
-              <input type="email" valueLink={this.makeValueLink('email')} placeholder="Email" />
-              <input type="password" valueLink={this.makeValueLink('password')} placeholder="Password" />
-              <input type="password" valueLink={this.makeValueLink('password_repeat')} placeholder="Repeat password" />
-              <button type="submit" onClick={this.props.onSignupClicked}>Signup</button>
+              <div className="Field">
+                <label className="FieldLabel" htmlFor="firstname">First name</label>
+                <input className="TextField" id="firstname" valueLink={this.makeValueLink('firstname')} type="text" />
+              </div>
+              <div className="Field">
+                <label className="FieldLabel" htmlFor="lastname">Last name</label>
+                <input className="TextField" id="lastname" valueLink={this.makeValueLink('lastname')} type="text" />
+              </div>
+              <div className="Field">
+                <label className="FieldLabel" htmlFor="email">Email</label>
+                <input className="TextField" id="email" valueLink={this.makeValueLink('email')} type="text" />
+              </div>
+              <div className="Field">
+                <label className="FieldLabel" htmlFor="password">Password</label>
+                <input className="TextField" id="password" valueLink={this.makeValueLink('password')} type="password" />
+              </div>
+              <div className="Field">
+                <label className="FieldLabel" htmlFor="password-repeat">Confirm password</label>
+                <input className="TextField" id="password-repeat" valueLink={this.makeValueLink('passwordRepeat')} type="password" />
+              </div>
+              <button type="submit" className="PrimaryButton" onClick={this.props.onSignupClicked}>Sign up</button>
             </form>
           </div>
         </div>

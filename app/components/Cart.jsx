@@ -29,6 +29,7 @@ export default class Cart extends Component {
         <div className="CartBottomLine">
           <div>Total: ${this.props.total}</div>
           <button
+            className="PrimaryButton"
             onClick={this.props.onCheckoutClicked}
             disabled={hasProducts ? '' : 'disabled'}>
             Checkout

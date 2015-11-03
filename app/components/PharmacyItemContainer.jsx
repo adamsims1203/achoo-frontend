@@ -9,10 +9,6 @@ export default class PharmacyItemContainer extends Component {
   };
 
   render() {
-    return (
-      <PharmacyItem
-        pharmacy={this.props.pharmacy}
-      />
-    );
+    return <PharmacyItem pharmacy={this.props.pharmacy} />;
   }
 }

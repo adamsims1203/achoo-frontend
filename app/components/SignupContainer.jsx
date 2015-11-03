@@ -31,7 +31,7 @@ export default class SignupContainer extends Component {
 
   onSignupClicked = (evt) => {
     evt.preventDefault();
-    SignupActions.signup(this.props.firstname, this.props.lastname, 
+    SignupActions.signup(this.props.firstname, this.props.lastname,
       this.props.email, this.props.password, this.props.password_repeat);
   };
 

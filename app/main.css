@@ -22,26 +22,18 @@ a:hover {
   color: #158cb3;
 }
 
+input,
+button,
+submit {
+  border: none;
+}
+
 body {
   background: #60c0e1;
   color: white;
   font-family: 'Lato', sans-serif;
   font-size: 1em;
   height: 100%;
-}
-
-button {
-  background: #60c0e1;
-  color: white;
-  border-radius: 4px;
-  border: none;
-  padding: 5px 8px;
-  border-bottom: 4px solid #106986;
-}
-
-button[disabled] {
-  background: #9FD0E0;
-  border-bottom: 4px solid #5495AB;
 }
 
 .App {
@@ -57,7 +49,7 @@ button[disabled] {
 
 .PageContent {
   flex: 1;
-  background: #F4F4F4;
+  background: #f8fafb;
 }
 
 .Content {
@@ -67,7 +59,6 @@ button[disabled] {
   width: 100%;
   overflow: auto;
   padding: 15px 50px;
-  text-align: center;
 }
 
 .PageHeader {
@@ -92,6 +83,18 @@ button[disabled] {
 .NavigationLink:hover {
   color: white;
   background: rgba(0, 0, 0, 0.05)
+}
+
+.NavigationLink.SIGNUP {
+  margin-left: 12px;
+  padding: 2px 10px;
+  border: 2px solid #8dd7ef;
+}
+
+.NavigationLink.SIGNUP:hover {
+  background: transparent;
+  border-color: white;
+  color: white;
 }
 
 .Hero {
@@ -151,7 +154,7 @@ button[disabled] {
   height: 50px;
   border: 1px solid #e5e5e5;
   border-radius: 4px;
-  color: black;
+  color: #34464c;
   box-sizing: border-box;
 }
 
@@ -184,32 +187,8 @@ button[disabled] {
   background: white;
   border-bottom: 4px solid #e5e5e5;
   border-radius: 4px;
-  color: #000;
-  padding: 20px 40px 40px 40px;
-}
-
-.SignupForm,
-.LoginForm {
-  display: flex;
-  flex-direction: column;
-  width: 380px;
-}
-
-.SignupForm *,
-.LoginForm * {
-  margin-bottom: 7px;
-  padding: 5px;
-  height: 35px;
-}
-
-.SignupForm input,
-.LoginForm input {
-  color: black;
-}
-
-.SignupForm button,
-.LoginForm button {
-  height: 45px;
+  color: #34464c;
+  padding: 42px;
 }
 
 .List {
@@ -224,21 +203,19 @@ button[disabled] {
   padding: 15px 30px;
   margin-bottom: 10px;
   text-align: left;
-  color: black;
+  color: #34464c;
   border-bottom: 4px solid #e5e5e5;
   border-radius: 4px;
-  color: black;
   overflow: auto;
   vertical-align: middle;
 }
 
 .List li:last-child {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
-
 .PharmacyTitle {
-  color: #000;
+  color: #34464c;
   text-align: center;
 }
 
@@ -274,9 +251,9 @@ button[disabled] {
   height: 34px;
   line-height: 34px;
   padding: 0 10px;
-  color: #000;
-  background-color: #E7E7E7;
-  text-shadow: 1px 1px 1px #FFF;
+  color: #34464c;
+  background-color: #e7e7e7;
+  text-shadow: 1px 1px 1px #ffffff;
   font-weight: bold;
   font-size: 1.0em;
   text-indent: -6px;
@@ -292,7 +269,7 @@ button[disabled] {
   height: 0;
   border-top: 17px solid transparent;
   border-bottom: 17px solid transparent;
-  border-right: 17px solid #E7E7E7;
+  border-right: 17px solid #e7e7e7;
 }
 
 .ListItemPrice::after {
@@ -314,14 +291,14 @@ button[disabled] {
 
 .Cart {
   background: white;
-  background-position: center; 
+  background-position: center;
   display: flex;
   flex-direction: column;
   text-align: left;
   width: 20%;
   margin-left: 10px;
   padding: 15px 30px;
-  color: black;
+  color: #34464c;
   border-bottom: 4px solid #e5e5e5;
   border-radius: 4px;
   vertical-align: top;
@@ -374,6 +351,65 @@ button[disabled] {
 .ErrorTitle {
   font-size: 5em;
   font-weight: bold;
-  margin: 10px 0px;
-  letter-spacing: -3px; 
+  margin: 10px 0;
+  letter-spacing: -3px;
+}
+
+/*
+ * Forms
+ */
+
+.LoginForm,
+.SignupForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+}
+
+.Field {
+  margin: 0 0 20px;
+}
+
+.FieldLabel {
+  font-size: .875em;
+  color: #97a8ae;
+}
+
+.TextField {
+  width: 95%;
+  padding: .4em .4em;
+  border: 1px solid #dae6ea;
+  border-radius: 4px;
+  color: #97a8ae;
+  font-size: 1.2em;
+  background: #f8fafb;
+  -webkit-transition: all ease-in-out .15s;
+  transition: all ease-in-out .15s;
+}
+
+.TextField:focus {
+  outline: none;
+  border-color: #8dd7ef;
+  background: white;
+}
+
+.PrimaryButton {
+  display: inline-block;
+  line-height: 2.275em;
+  background: #60c0e1;
+  border-radius: 4px;
+  border-bottom: 4px solid #106986;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: normal;
+  margin: 0 2px;
+  padding: 0 1.5em;
+  color: white;
+}
+
+.PrimaryButton:disabled {
+  background: #9fd0e0;
+  border-bottom: 4px solid #5495ab;
 }

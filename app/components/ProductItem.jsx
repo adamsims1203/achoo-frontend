@@ -18,7 +18,7 @@ export default class ProductItem extends Component {
         <div className="ListItemName">{product.name}</div>
         <div className="ListItemSubcontainer">
           <div className="ListItemPrice PriceTag">${product.price}</div>
-          <button className="CartButton" onClick={this.props.onAddToCartClicked}>Add to cart</button>
+          <button className="PrimaryButton CartButton" onClick={this.props.onAddToCartClicked}>Add to cart</button>
         </div>
       </div>
     );

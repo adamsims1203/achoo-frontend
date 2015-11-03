@@ -21,11 +21,16 @@ export default class Login extends Component {
       <div className="PageContent">
         <div className="Content">
           <div className="FormBox">
-            <h1>Login</h1>
             <form className="LoginForm" role="form">
-              <input type="email" valueLink={this.makeValueLink('email')} placeholder="Email" />
-              <input type="password" valueLink={this.makeValueLink('password')} placeholder="Password" />
-              <button type="submit" onClick={this.props.onLoginClicked}>Login</button>
+              <div className="Field">
+                <label className="FieldLabel" htmlFor="email">Email</label>
+                <input className="TextField" id="email" valueLink={this.makeValueLink('email')} type="text" />
+              </div>
+              <div className="Field">
+                <label className="FieldLabel" htmlFor="password">Password</label>
+                <input className="TextField" id="password" valueLink={this.makeValueLink('password')} type="password" />
+              </div>
+              <button type="submit" className="PrimaryButton" onClick={this.props.onLoginClicked}>Login</button>
             </form>
           </div>
         </div>

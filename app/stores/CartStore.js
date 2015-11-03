@@ -18,7 +18,6 @@ export default class CartStore {
 
   onRemoveFromCart(product) {
     const id = product.id;
-    console.log('Delete ' + id)
     delete this.products[id];
   }
 
