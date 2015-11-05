@@ -1,41 +1,31 @@
-import { createStore } from 'alt/utils/decorators';
+import { createStore, datasource, bind } from 'alt/utils/decorators';
 import alt from '../libs/alt';
 import OrderActions from '../actions/OrderActions';
+import OrderSource from '../sources/OrderSource';
 
 @createStore(alt)
+@datasource(OrderSource)
 export default class OrderStore {
-  constructor() {
-    this.bindActions(OrderActions);
+  state = {
+    orders: [],
+    errorMessage: null,
+  };
 
-    this.orders = [];
-    this.errorMessage = null;
+  @bind(OrderActions.fetchOrders)
+  onFetchOrders() {
+    if (!this.getInstance().isLoading()) {
+      setImmediate(() => this.getInstance().fetch());
+    }
   }
 
-  onUpdateOrders(orders) {
+  @bind(OrderActions.receivedOrders)
+  onReceivedOrders(orders) {
     this.orders = orders;
     this.errorMessage = null;
   }
 
-  onFetchOrders() {
-    this.orders = [];
-  }
+  @bind(OrderActions.fetchingOrdersFailed)
+  onFetchingOrdersFailed() {
 
-  onOrdersFailed(errorMessage) {
-    this.errorMessage = errorMessage;
-  }
-
-  findOrder(id) {
-    const orders = this.orders;
-    const orderIndex = orders.findIndex((order) => order.id === id);
-
-    if (orderIndex < 0) {
-      console.warn('Failed to find order', orders, id);
-    }
-
-    return orderIndex;
-  }
-
-  get(ids) {
-    return (ids || []).map((id) => this.orders[this.findOrder(id)]).filter((id) => id);
   }
 }

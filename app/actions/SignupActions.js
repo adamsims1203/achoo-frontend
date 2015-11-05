@@ -6,13 +6,9 @@ export default class SignupActions {
   constructor() {
     this.generateActions(
       'updateFormValue',
+      'signup',
       'finishSignup',
       'signupFailed',
     );
   }
-
-  signup() {
-
-  }
-
 }

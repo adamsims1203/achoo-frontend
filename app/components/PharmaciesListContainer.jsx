@@ -17,7 +17,7 @@ export default class PharmaciesListContainer extends Component {
   /* eslint-enable react/sort-comp */
 
   static propTypes = {
-    filteredPharmacies: React.PropTypes.array,
+    pharmacies: React.PropTypes.array,
     errorMessage: React.PropTypes.string,
   };
 
@@ -28,7 +28,7 @@ export default class PharmaciesListContainer extends Component {
   render() {
     return (
       <PharmaciesList
-        pharmacies={this.props.filteredPharmacies}
+        pharmacies={this.props.pharmacies}
         errorMessage={this.props.errorMessage}
       />
     );

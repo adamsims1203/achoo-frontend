@@ -1,6 +1,6 @@
 import { createActions } from 'alt/utils/decorators';
 import alt from '../libs/alt';
-import PharmacySource from '../sources/PharmacySource';
+// import PharmacySource from '../sources/PharmacySource';
 
 @createActions(alt)
 export default class ProductActions {
@@ -14,12 +14,12 @@ export default class ProductActions {
   }
 
   search(query) {
-    this.dispatch();
-
-    PharmacySource.search(query)
-      .then((ids) => {
-        console.log(ids);
-        this.actions.receivedResults(ids);
-      });
+    // this.dispatch();
+    //
+    // PharmacySource.search(query)
+    //   .then((ids) => {
+    //     console.log(ids);
+    //     this.actions.receivedResults(ids);
+    //   });
   }
 }

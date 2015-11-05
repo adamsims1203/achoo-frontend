@@ -1,34 +1,36 @@
-import { createStore } from 'alt/utils/decorators';
+import { createStore, datasource, bind } from 'alt/utils/decorators';
 import alt from '../libs/alt';
 import SignupActions from '../actions/SignupActions';
+import SignupSource from '../sources/SignupSource';
 
 @createStore(alt)
+@datasource(SignupSource)
 export default class SignupStore {
-  constructor() {
-    this.bindActions(SignupActions);
+  state = {
+    firstname: '',
+    lastname: '',
+    email: '',
+    password: '',
+    passwordRepeat: '',
+    errorMessage: null,
+  };
 
-    this.firstname = '';
-    this.lastname = '';
-    this.email = '';
-    this.password =
-    this.password_repeat = '';
-    this.jwt = null;
-    this.errorMessage = null;
-  }
-
+  @bind(SignupActions.updateFormValue)
   onUpdateFormValue({ key, newValue }) {
     this[key] = newValue;
   }
 
+  @bind(SignupActions.signup)
   onSignup() {
-
+    this.getInstance().signup();
   }
 
-  onFinishLSignup(jwt) {
-    this.jwt = jwt;
+  @bind(SignupActions.finishSignup)
+  onFinishSignup() {
   }
 
-  onSignupFailed(errorMessage) {
-    this.errorMessage = errorMessage;
+  @bind(SignupActions.signupFailed)
+  onSignupFailed() {
+
   }
 }

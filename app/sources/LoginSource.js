@@ -1,14 +1,18 @@
-export default class LoginSource {
-  static login(email, password) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (email === 'user@example.com' && password === 'password') {
-          const jwt = 'shhhhhh';
-          resolve(jwt);
-        } else {
-          reject('Invalid email/password combination');
-        }
-      }, 250);
-    });
-  }
-}
+import axios from 'axios';
+import LoginActions from '../actions/LoginActions';
+
+const LoginSource = {
+  login: {
+    remote(state) {
+      return axios.post('http://localhost:3000/sessions', {
+        email: state.email,
+        password: state.password,
+      });
+    },
+
+    success: LoginActions.receivedToken,
+    error: LoginActions.loginFailed,
+  },
+};
+
+export default LoginSource;

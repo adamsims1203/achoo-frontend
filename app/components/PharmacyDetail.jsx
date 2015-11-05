@@ -1,25 +1,18 @@
 import React, { Component } from 'react';
+import PharmacyDetailHeader from './PharmacyDetailHeader';
+import ProductsList from './ProductsList';
+import CartContainer from './CartContainer';
 
-export default class Hero extends Component {
+export default class PharmacyDetail extends Component {
   render() {
     return (
-      <section className="PharmacyDetail">
-        <div className="PharmacyDetailContainer">
-          <img src="https://pbs.twimg.com/profile_images/467002768075395072/ya2By6bN.jpeg" />
-          <div>
-            <h1>Wallgreens</h1>
-            <p>8th Road, NY</p>
-            <p>(+001) 123-456-789</p>
-            <span className="rating">
-              <label className="static-rating-star SELECTED" />
-              <label className="static-rating-star SELECTED" />
-              <label className="static-rating-star SELECTED" />
-              <label className="static-rating-star" />
-              <label className="static-rating-star" />
-            </span>
-          </div>
+      <div className="PageContent">
+        <PharmacyDetailHeader pharmacy={this.props.pharmacy} />
+        <div className="Content">
+        	<ProductsList products={this.props.products} />
+          <CartContainer />
         </div>
-      </section>
+      </div>
     );
   }
 }

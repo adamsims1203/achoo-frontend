@@ -448,9 +448,9 @@ body {
 /* Rating */
 
 .static-rating-star,
-.rating-star {        
+.rating-star {
   display: block;
-  float: left;        
+  float: left;
   width: 24px;
   height: 24px;
   background: url('./assets/achoo-star-icon-gray.svg');

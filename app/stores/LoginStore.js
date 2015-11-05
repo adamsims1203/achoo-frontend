@@ -1,42 +1,32 @@
-import { createStore } from 'alt/utils/decorators';
+import { createStore, datasource, bind } from 'alt/utils/decorators';
 import alt from '../libs/alt';
 import LoginActions from '../actions/LoginActions';
+import LoginSource from '../sources/LoginSource';
 
 @createStore(alt)
+@datasource(LoginSource)
 export default class LoginStore {
-  constructor() {
-    this.bindActions(LoginActions);
+  state = {
+    email: '',
+    password: '',
+    errorMessage: null,
+  };
 
-    this.email = '';
-    this.password = '';
-    this.jwt = null;
-    this.errorMessage = null;
-  }
-
+  @bind(LoginActions.updateFormValue)
   onUpdateFormValue({ key, newValue }) {
     this[key] = newValue;
   }
 
+  @bind(LoginActions.login)
   onLogin() {
+    this.getInstance().login();
     this.email = '';
     this.password = '';
     this.errorMessage = null;
   }
 
-  onFinishLogin(jwt) {
-    this.jwt = jwt;
-  }
-
+  @bind(LoginActions.loginFailed)
   onLoginFailed(errorMessage) {
     this.errorMessage = errorMessage;
-  }
-
-  onLogout() {
-    this.jwt = null;
-  }
-
-  static isLoggedIn() {
-    const { jwt } = this.getState();
-    return jwt !== null;
   }
 }

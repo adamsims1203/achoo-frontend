@@ -21,7 +21,7 @@ export default class SignupContainer extends Component {
     lastname: React.PropTypes.string.isRequired,
     email: React.PropTypes.string.isRequired,
     password: React.PropTypes.string.isRequired,
-    password_repeat: React.PropTypes.string.isRequired,
+    passwordRepeat: React.PropTypes.string.isRequired,
     errorMessage: React.PropTypes.string,
   };
 
@@ -32,7 +32,7 @@ export default class SignupContainer extends Component {
   onSignupClicked = (evt) => {
     evt.preventDefault();
     SignupActions.signup(this.props.firstname, this.props.lastname,
-      this.props.email, this.props.password, this.props.password_repeat);
+      this.props.email, this.props.password, this.props.passwordRepeat);
   };
 
   render() {
@@ -42,7 +42,7 @@ export default class SignupContainer extends Component {
         lastname={this.props.lastname}
         email={this.props.email}
         password={this.props.password}
-        password_repeat={this.props.password_repeat}
+        passwordRepeat={this.props.passwordRepeat}
         errorMessage={this.props.errorMessage}
         onUpdateFormValue={this.onUpdateFormValue}
         onSignupClicked={this.onSignupClicked}
