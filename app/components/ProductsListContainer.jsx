@@ -19,6 +19,7 @@ export default class ProductsListContainer extends Component {
   static propTypes = {
     products: React.PropTypes.array,
     errorMessage: React.PropTypes.string,
+    isLoggedIn : React.PropTypes.bool
   };
 
   componentDidMount() {
@@ -30,6 +31,7 @@ export default class ProductsListContainer extends Component {
       <ProductsList
         products={this.props.products}
         errorMessage={this.props.errorMessage}
+        isLoggedIn={this.props.isLoggedIn}
       />
     );
   }

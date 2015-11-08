@@ -7,7 +7,7 @@ export default class LoginActions {
     this.generateActions(
       'login',
       'updateFormValue',
-      'receivedJwt',
+      'receivedToken',
       'loginFailed',
       'logout',
     );

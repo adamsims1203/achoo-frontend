@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 export default class Login extends Component {
   static propTypes = {
     email: React.PropTypes.string.isRequired,
@@ -31,6 +32,7 @@ export default class Login extends Component {
                 <input className="TextField" id="password" valueLink={this.makeValueLink('password')} type="password" />
               </div>
               <button type="submit" className="PrimaryButton" onClick={this.props.onLoginClicked}>Login</button>
+              <p>{this.props.errorMessage}</p>            
             </form>
           </div>
         </div>

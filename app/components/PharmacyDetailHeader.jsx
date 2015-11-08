@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 
 export default class PharmacyDetailHeader extends Component {
+
+  getPharmacyStarClass(pharmacy, starNumber){
+    const starsClass = 'static-rating-star';
+    return pharmacy.score >= starNumber ? starsClass + ' SELECTED' : starsClass; 
+  }
+
   render() {
     const pharmacy = this.props.pharmacy;
 
     if (!pharmacy) {
       return <div>Loading pharmacy...</div>;
     }
+
 
     return (
       <section className="PharmacyDetail">
@@ -17,11 +24,13 @@ export default class PharmacyDetailHeader extends Component {
             <p>{pharmacy.address}</p>
             <p>{pharmacy.phoneNumber}</p>
             <span className="rating">
-              <label className="static-rating-star SELECTED" />
-              <label className="static-rating-star SELECTED" />
-              <label className="static-rating-star SELECTED" />
-              <label className="static-rating-star" />
-              <label className="static-rating-star" />
+
+
+              <label className={this.getPharmacyStarClass(pharmacy, 1)}/>
+              <label className={this.getPharmacyStarClass(pharmacy, 2)} />
+              <label className={this.getPharmacyStarClass(pharmacy, 3)} />
+              <label className={this.getPharmacyStarClass(pharmacy, 4)} />
+              <label className={this.getPharmacyStarClass(pharmacy, 5)} />
             </span>
           </div>
         </div>

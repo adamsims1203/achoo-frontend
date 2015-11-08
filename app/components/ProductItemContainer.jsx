@@ -7,7 +7,9 @@ export default class ProductItemContainer extends Component {
     product: React.PropTypes.shape({
       name: React.PropTypes.string,
       price: React.PropTypes.number,
-    }).isRequired,
+      loggedIn: React.PropTypes.bool
+    },
+    ).isRequired,
   };
 
   onAddToCartClicked = () => {
@@ -19,6 +21,7 @@ export default class ProductItemContainer extends Component {
       <ProductItem
         product={this.props.product}
         onAddToCartClicked={this.onAddToCartClicked}
+        loggedIn={this.props.loggedIn}
       />
     );
   }

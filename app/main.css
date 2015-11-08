@@ -69,6 +69,7 @@ body {
   padding: 1em 1.5em;
 }
 
+.NavigationText,
 .NavigationLink {
   display: block;
   float: left;
@@ -79,6 +80,8 @@ body {
   border-radius: 4px;
   transition: all .15s ease-in-out
 }
+
+
 
 .NavigationLink:hover {
   color: white;

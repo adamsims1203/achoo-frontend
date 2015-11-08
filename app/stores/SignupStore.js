@@ -17,7 +17,7 @@ export default class SignupStore {
 
   @bind(SignupActions.updateFormValue)
   onUpdateFormValue({ key, newValue }) {
-    this[key] = newValue;
+    this.state[key] = newValue;
   }
 
   @bind(SignupActions.signup)

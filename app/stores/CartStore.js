@@ -7,6 +7,7 @@ import CartSource from '../sources/CartSource';
 @datasource(CartSource)
 export default class CartStore {
   state = {
+    pharmacyId: 0,
     products: {},
     errorMessage: null,
   };
@@ -14,14 +15,14 @@ export default class CartStore {
   @bind(CartActions.addToCart)
   onAddToCart(product) {
     const id = product.id;
-    product.quantity = id in this.products ? this.products[id].quantity + 1 : 1;
-    this.products[id] = Object.assign({}, product);
+    product.quantity = id in this.state.products ? this.products[id].quantity + 1 : 1;
+    this.state.products[id] = Object.assign({}, product);
   }
 
   @bind(CartActions.removeFromCart)
   onRemoveFromCart(product) {
     const id = product.id;
-    delete this.products[id];
+    delete this.state.products[id];
   }
 
   @bind(CartActions.checkout)
@@ -31,7 +32,7 @@ export default class CartStore {
 
   @bind(CartActions.finishCheckout)
   onFinishCheckout(products) {
-    this.products = {};
+    this.state.products = {};
     console.log('You bought:', products); // eslint-disable-line no-console
   }
 
@@ -47,7 +48,7 @@ export default class CartStore {
 
   static getTotal() {
     const total = this.getAddedProducts().reduce((sum, product) => {
-      return sum + product.price * product.quantity;
+      return sum + product.unitaryPrice * product.quantity;
     }, 0);
     return total.toFixed(2);
   }
