@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import connectToStores from 'alt/utils/connectToStores';
-import OrderStore from '../stores/PharmacyStore';
+import OrderStore from '../stores/OrderStore';
 import OrderActions from '../actions/OrderActions';
 import OrdersList from './OrdersList';
 
@@ -22,7 +22,8 @@ export default class OrdersListContainer extends Component {
   };
 
   componentDidMount() {
-    OrdersActions.fetchOrders();
+    OrderActions.fetchOrders();
+    console.log("orders");
   }
 
   render() {

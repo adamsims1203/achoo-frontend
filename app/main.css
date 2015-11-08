@@ -261,6 +261,15 @@ body {
   display: flex;
 }
 
+.ListItem div {
+  flex: 1;
+}
+
+.ListItem p {
+  margin-top: 10px;
+  color: #999;
+}
+
 .ListItemImage {
   flex: none;
   height: 100px;
