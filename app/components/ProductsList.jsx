@@ -5,17 +5,18 @@ export default class ProductsList extends Component {
   static propTypes = {
     products: React.PropTypes.array,
     errorMessage: React.PropTypes.string,
-    loggedIn: React.PropTypes.bool
+    isLoggedIn: React.PropTypes.bool,
   };
 
   renderProduct = (product) => {
     return (
       <li key={`product${product.id}`}>
-        <ProductItemContainer product={product} 
-        loggedIn={this.props.loggedIn}/>
+        <ProductItemContainer
+          product={product}
+          isLoggedIn={this.props.isLoggedIn}/>
       </li>
     );
-  }
+  };
 
   render() {
     if (this.props.errorMessage) {

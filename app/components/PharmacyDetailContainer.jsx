@@ -14,29 +14,25 @@ export default class PharmacyDetailContainer extends Component {
   }
 
   static getPropsFromStores() {
-    const pharmacyDetailStoreState = PharmacyDetailStore.getState();
-    return {
-      pharmacy: pharmacyDetailStoreState['pharmacy'],
-      products: pharmacyDetailStoreState['products'],
-      errorMessage: pharmacyDetailStoreState['errorMessage'],
-      loggedIn: LoginStore.getUserIsLoggedIn()
-    }
+    return Object.assign({}, PharmacyDetailStore.getState(), {
+      loggedIn: LoginStore.isUserLoggedIn(),
+    });
   }
   /* eslint-enable react/sort-comp */
 
   static propTypes = {
+    params: React.PropTypes.object,
     pharmacy: React.PropTypes.shape({
       id: React.PropTypes.number,
       name: React.PropTypes.string,
       phoneNumber: React.PropTypes.string,
       address: React.PropTypes.string,
       imageUrl: React.PropTypes.string,
-      score: React.PropTypes.number
+      score: React.PropTypes.number,
     }),
     products: React.PropTypes.array.isRequired,
-    loggedIn: React.PropTypes.bool
+    loggedIn: React.PropTypes.bool,
   };
-
 
   componentDidMount() {
     const pharmacyId = this.props.params.id;

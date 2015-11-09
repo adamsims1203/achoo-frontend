@@ -5,23 +5,25 @@ export default class ProductItem extends Component {
     product: React.PropTypes.shape({
       name: React.PropTypes.string,
       price: React.PropTypes.number,
-      loggedIn: React.PropTypes.bool
     }).isRequired,
+    loggedIn: React.PropTypes.bool,
     onAddToCartClicked: React.PropTypes.func.isRequired,
   };
 
   render() {
     const product = this.props.product;
-    const addToChartBooton = this.props.loggedIn ?  
-      <button className="PrimaryButton CartButton" onClick={this.props.onAddToCartClicked}>Add to cart</button> 
-      : "";
+
+    const addToCartButton = this.props.loggedIn ?
+      <button className="PrimaryButton CartButton" onClick={this.props.onAddToCartClicked}>Add to cart</button>
+      : '';
+
     return (
       <div className="ListItem">
         <img className="ListItemImage" src={product.imageUrl}></img>
         <div className="ListItemName">{product.name}</div>
         <div className="ListItemSubcontainer">
           <div className="ListItemPrice PriceTag">${product.unitaryPrice}</div>
-         {addToChartBooton}
+          {addToCartButton}
         </div>
       </div>
     );

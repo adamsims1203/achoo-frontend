@@ -23,7 +23,6 @@ export default class OrdersListContainer extends Component {
 
   componentDidMount() {
     OrderActions.fetchOrders();
-    console.log("orders");
   }
 
   render() {

@@ -46,6 +46,6 @@ export default class PharmacyStore {
 
   @bind(ProductActions.fetchingProductsFailed)
   onFetchingProductsFailed() {
-    this.state.errorMessage = 'Error: fetching pharmacy failed';
+    this.state.errorMessage = 'Error: fetching products failed';
   }
 }

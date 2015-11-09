@@ -3,9 +3,8 @@ import CartActions from '../actions/CartActions';
 
 const CartSource = {
   checkout: {
-    remote(state) {
-      return axios.post('http://localhost:3000/orders', {
-      });
+    remote() {
+      return axios.post('http://localhost:3000/orders', { });
     },
 
     success: CartActions.finishCheckout,

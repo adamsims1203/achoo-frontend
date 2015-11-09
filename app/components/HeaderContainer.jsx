@@ -6,26 +6,31 @@ import Header from './Header';
 
 @connectToStores
 export default class HeaderContainer extends Component {
- /* eslint-disable react/sort-comp */
+  /* eslint-disable react/sort-comp */
   static getStores() {
     return [LoginStore];
   }
 
   static getPropsFromStores() {
     return {
-      isLoggedIn: LoginStore.getUserIsLoggedIn()
+      isLoggedIn: LoginStore.isUserLoggedIn(),
     };
   }
+  /* eslint-enable react/sort-comp */
+
+  static propTypes = {
+    isLoggedIn: React.PropTypes.bool.isRequired,
+  };
 
   onLogoutClicked = () => {
     LoginActions.logout();
-  }
+  };
 
   render() {
     return (
       <Header
-        onLogoutClicked = {this.onLogoutClicked}
-        isLoggedIn = {this.props.isLoggedIn}
+        onLogoutClicked={this.onLogoutClicked}
+        isLoggedIn={this.props.isLoggedIn}
       />
     );
   }

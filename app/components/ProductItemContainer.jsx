@@ -7,9 +7,8 @@ export default class ProductItemContainer extends Component {
     product: React.PropTypes.shape({
       name: React.PropTypes.string,
       price: React.PropTypes.number,
-      loggedIn: React.PropTypes.bool
-    },
-    ).isRequired,
+    }).isRequired,
+    loggedIn: React.PropTypes.bool,
   };
 
   onAddToCartClicked = () => {

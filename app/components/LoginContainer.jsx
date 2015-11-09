@@ -14,8 +14,6 @@ export default class LoginContainer extends Component {
   static getPropsFromStores() {
     return LoginStore.getState();
   }
-
-  
   /* eslint-enable react/sort-comp */
 
   static propTypes = {
