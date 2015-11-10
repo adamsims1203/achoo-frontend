@@ -77,7 +77,6 @@ export default class OrderItem extends Component {
   }
 
   renderStars(order) {
-    console.log(order.score);
     return order.score !== null ? this.renderStaticStars(order.score) : this.renderInputStars(order);
   }
 
@@ -85,10 +84,9 @@ export default class OrderItem extends Component {
     const order = this.props.order;
     const orderTotal = this.calculateTotal(order);
 
-    console.log(order);
-
     return (
       <div className="ListItem">
+        <img className="ListItemImage" src={order.pharmacyImageUrl}></img>
         <div className="ListItemLeft">
           <div className="ListItemName">{order.pharmacyName}</div>
           <div className="ListItemDescription">
