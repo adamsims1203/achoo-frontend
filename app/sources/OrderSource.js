@@ -6,7 +6,7 @@ const OrderSource = {
   fetch: {
     remote() {
       const jwt = localStorage.getItem('jwt');
-      return axios.get(`http://localhost:3000/orders?token=${jwt}`);
+      return axios.get(`http://api.achoo.uy/orders?token=${jwt}`);
     },
 
     loading: OrderActions.loadingOrders,
@@ -17,7 +17,7 @@ const OrderSource = {
   rateOrder: {
     remote(state, orderRate) {
       const jwt = localStorage.getItem('jwt');
-      return axios.post(`http://localhost:3000/orders/${orderRate.orderId}/score?token=${jwt}`,
+      return axios.post(`http://api.achoo.uy/orders/${orderRate.orderId}/score?token=${jwt}`,
         querystring.stringify({
           orderId: orderRate.orderId,
           score: orderRate.rate,

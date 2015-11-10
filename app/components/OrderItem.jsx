@@ -8,6 +8,17 @@ export default class OrderItem extends Component {
     onRateChanged: React.PropTypes.func,
   };
 
+  getPharmacyStarClass(score, starNumber) {
+    const starsClass = 'static-rating-star';
+    return score >= starNumber ? starsClass + ' SELECTED' : starsClass;
+  }
+
+  calculateTotal(order) {
+    return order.orderLines
+      .map((orderLine) => orderLine.productPrice * orderLine.quantity)
+      .reduce((priceA, priceB) => priceA + priceB);
+  }
+
   renderInputStars(order) {
     return (
       <span className="rating">
@@ -40,11 +51,6 @@ export default class OrderItem extends Component {
     );
   }
 
-  getPharmacyStarClass(score, starNumber) {
-    const starsClass = 'static-rating-star';
-    return score >= starNumber ? starsClass + ' SELECTED' : starsClass;
-  }
-
   renderStaticStars(score) {
     return (
       <span className="rating">
@@ -59,15 +65,6 @@ export default class OrderItem extends Component {
 
   renderStars(order) {
     return order.score !== null ? this.renderStaticStars(order.score) : this.renderInputStars(order);
-  }
-
-  calculateTotal(order) {
-    const total = order.orderLines.map(function(orderLine) {
-      return orderLine.productPrice * orderLine.quantity;
-    }).reduce(function(priceA, priceB) {
-      return priceA + priceB;
-    });
-    return total;
   }
 
   renderOrderLine(orderLine) {

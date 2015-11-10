@@ -4,6 +4,7 @@
   "description": "Delivering health to your door",
   "main": "index.js",
   "scripts": {
+    "deploy": "node ./lib/deploy.js",
     "start": "webpack-dev-server",
     "build": "webpack",
     "lint": "npm run lint-js && npm run lint-css",
@@ -37,6 +38,7 @@
     "eslint-plugin-smells": "^1.0.1",
     "extract-text-webpack-plugin": "^0.8.2",
     "file-loader": "^0.8.4",
+    "gh-pages": "^0.5.0",
     "html-webpack-plugin": "^1.6.2",
     "react-transform-hmr": "^1.0.1",
     "style-loader": "^0.13.0",
@@ -52,7 +54,6 @@
     "query-string": "^3.0.0",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
-    "react-router": "^1.0.0-rc3",
-    "superagent": "^1.4.0"
+    "react-router": "^1.0.0-rc3"
   }
 }

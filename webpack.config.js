@@ -78,7 +78,7 @@ if (TARGET === 'start' || !TARGET) {
       new webpack.HotModuleReplacementPlugin()
     ]
   });
-} else if (TARGET === 'build') {
+} else if (TARGET === 'build' || TARGET === 'deploy') {
   module.exports = merge(common, {
     entry: {
       app: APP_PATH,

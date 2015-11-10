@@ -12,8 +12,7 @@ const CartSource = {
       });
 
       const jwt = localStorage.getItem('jwt');
-      console.log(pharmacyId);
-      return axios.post(`http://localhost:3000/orders?token=${jwt}`, {
+      return axios.post(`http://api.achoo.uy/orders?token=${jwt}`, {
         orderLines,
         pharmacyId: pharmacyId,
       });

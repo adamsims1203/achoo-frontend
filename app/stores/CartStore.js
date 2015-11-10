@@ -31,7 +31,7 @@ export default class CartStore {
   }
 
   @bind(CartActions.finishCheckout)
-  onFinishCheckout(products) {
+  onFinishCheckout() {
     this.state.products = {};
     history.replaceState(null, '/orders');
   }
