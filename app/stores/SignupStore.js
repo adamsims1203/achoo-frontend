@@ -10,6 +10,7 @@ export default class SignupStore {
   state = {
     firstName: '',
     lastName: '',
+    address: '',
     email: '',
     password: '',
     passwordRepeat: '',
@@ -30,6 +31,7 @@ export default class SignupStore {
   onFinishSignup() {
     this.state.firstName = '';
     this.state.lastName = '';
+    this.state.address = '';
     this.state.email = '';
     this.state.password = '';
     this.state.passwordRepeat = '';
