@@ -27,10 +27,14 @@ export default class OrdersListContainer extends Component {
 
   render() {
     return (
-      <OrdersList
-        orders={this.props.orders}
-        errorMessage={this.props.errorMessage}
-      />
+      <div className="PageContent">
+        <div className="Content">
+          <OrdersList
+            orders={this.props.orders}
+            errorMessage={this.props.errorMessage}
+          />
+        </div>
+      </div>
     );
   }
 }

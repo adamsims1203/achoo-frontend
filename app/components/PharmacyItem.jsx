@@ -29,6 +29,7 @@ export default class PharmacyItem extends Component {
           <Link className="PrimaryButton ListButton" to={`/pharmacies/${pharmacy.id}`}>View detail</Link>
         </div>
       </div>
+
     );
   }
 }

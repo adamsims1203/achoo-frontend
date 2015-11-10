@@ -5,9 +5,9 @@ const OrderSource = {
   fetch: {
     remote() {
       return axios.get('http://localhost:3000/orders', {
-        transformRequest: axios.defaults.transformRequest.concat((data, headers) => {
-          headers['Authorization'] = `Bearer ${localStorage.getItem('jwt')}`;
-        }),
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
+        },
       });
     },
 

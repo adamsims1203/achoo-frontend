@@ -278,6 +278,24 @@ body {
   flex: 1;
 }
 
+.ListItemName ul {
+  padding-left: 20px;
+  padding-top: 10px
+}
+
+.ListItemName ul li:before {
+  content: '- ';
+}
+
+.ListItemName ul li{
+  color: #999;
+  border: none;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 2px;
+}
+
 .ListItemSubcontainer {
   display: flex;
   flex-direction: column;
@@ -368,6 +386,7 @@ body {
   border-top: 1px dashed #E7E7E7;
 }
 
+.TotalOrder,
 .CartBottomLine div {
   font-size: 1.0em;
   font-weight: bold;
@@ -462,10 +481,17 @@ body {
 .static-rating-star,
 .rating-star {
   display: block;
-  float: left;
   width: 24px;
   height: 24px;
   background: url('./assets/achoo-star-icon-gray.svg');
+}
+
+.static-rating-star {
+  float: left;
+}
+
+.rating-star {
+  float: right;
 }
 
 .static-rating-star.SELECTED {
@@ -481,5 +507,6 @@ body {
 .rating-star:hover,
 .rating-star:hover ~ .rating-star,
 .rating-input:checked ~ .rating-star {
-  background: url('./assets/achoo-star-icon-gray.svg');
+  background: url('./assets/achoo-star-icon-orange.svg');
 }
+
