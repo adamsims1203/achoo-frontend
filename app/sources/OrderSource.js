@@ -17,7 +17,7 @@ const OrderSource = {
   rateOrder: {
     remote(state, orderRate) {
       const jwt = localStorage.getItem('jwt');
-      return axios.put(`http://localhost:3000/orders/${orderRate.orderId}/score?token=${jwt}`,
+      return axios.post(`http://localhost:3000/orders/${orderRate.orderId}/score?token=${jwt}`,
         querystring.stringify({
           orderId: orderRate.orderId,
           score: orderRate.rate,
