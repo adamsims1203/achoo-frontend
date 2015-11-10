@@ -20,6 +20,7 @@ export default class CartContainer extends Component {
   /* eslint-enable react/sort-comp */
 
   static propTypes = {
+    pharmacy: React.PropTypes.object,
     products: React.PropTypes.array.isRequired,
     total: React.PropTypes.string.isRequired,
   };
@@ -31,7 +32,8 @@ export default class CartContainer extends Component {
       return;
     }
 
-    CartActions.checkout(products);
+    const pharmacyId = this.props.pharmacy.id;
+    CartActions.checkout(pharmacyId);
   }
 
   render() {

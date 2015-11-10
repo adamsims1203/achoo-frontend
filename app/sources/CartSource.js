@@ -3,11 +3,18 @@ import CartActions from '../actions/CartActions';
 
 const CartSource = {
   checkout: {
-    remote(state) {
-      return axios.post('http://localhost:3000/orders', {
-        order: {
-          pharmacyId: state.pharmacyId,
-        },
+    remote(state, pharmacyId) {
+      const orderLines = Object.keys(state.products).map((productId) => {
+        return {
+          productId: state.products[productId].id,
+          quantity: state.products[productId].quantity,
+        };
+      });
+
+      const jwt = localStorage.getItem('jwt');
+      return axios.post(`http://localhost:3000/orders?token=${jwt}`, {
+        orderLines,
+        order: { pharmacyId },
       });
     },
 

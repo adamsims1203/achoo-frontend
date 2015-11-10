@@ -11,7 +11,12 @@ export default class PharmacyDetail extends Component {
   };
 
   render() {
-    const cart = this.props.isLoggedIn ? <CartContainer /> : '';
+    const cart = this.props.isLoggedIn ?
+      <CartContainer
+        pharmacy={this.props.pharmacy}
+      /> :
+      '';
+
     return (
       <div className="PageContent">
         <PharmacyDetailHeader pharmacy={this.props.pharmacy} />

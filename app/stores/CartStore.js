@@ -7,7 +7,6 @@ import CartSource from '../sources/CartSource';
 @datasource(CartSource)
 export default class CartStore {
   state = {
-    pharmacyId: 0,
     products: {},
     errorMessage: null,
   };
@@ -26,8 +25,8 @@ export default class CartStore {
   }
 
   @bind(CartActions.checkout)
-  onCheckout() {
-    setImmediate(() => this.getInstance().checkout());
+  onCheckout(pharmacyId) {
+    setImmediate(() => this.getInstance().checkout(pharmacyId));
   }
 
   @bind(CartActions.finishCheckout)

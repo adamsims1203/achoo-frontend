@@ -43,6 +43,7 @@ export default class PharmacyDetailContainer extends Component {
   render() {
     return (
       <PharmacyDetail
+        pharmacyId={this.props.params.id}
         pharmacy={this.props.pharmacy}
         products={this.props.products}
         isLoggedIn={this.props.isLoggedIn}
