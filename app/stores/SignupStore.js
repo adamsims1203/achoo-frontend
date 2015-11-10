@@ -1,5 +1,6 @@
 import { createStore, datasource, bind } from 'alt/utils/decorators';
 import alt from '../libs/alt';
+import history from '../libs/history';
 import SignupActions from '../actions/SignupActions';
 import SignupSource from '../sources/SignupSource';
 
@@ -7,8 +8,8 @@ import SignupSource from '../sources/SignupSource';
 @datasource(SignupSource)
 export default class SignupStore {
   state = {
-    firstname: '',
-    lastname: '',
+    firstName: '',
+    lastName: '',
     email: '',
     password: '',
     passwordRepeat: '',
@@ -22,11 +23,17 @@ export default class SignupStore {
 
   @bind(SignupActions.signup)
   onSignup() {
-    this.getInstance().signup();
+    setImmediate(() => this.getInstance().signup());
   }
 
   @bind(SignupActions.finishSignup)
   onFinishSignup() {
+    this.state.firstName = '';
+    this.state.lastName = '';
+    this.state.email = '';
+    this.state.password = '';
+    this.state.passwordRepeat = '';
+    history.replaceState(null, '/login');
   }
 
   @bind(SignupActions.signupFailed)

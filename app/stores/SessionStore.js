@@ -13,18 +13,18 @@ export default class SessionStore {
   onReceivedJwt(response) {
     const jwt = response.data.token;
     this.state.jwt = jwt;
-    localStorage.setItem('token', jwt);
+    localStorage.setItem('jwt', jwt);
     history.replaceState(null, '/');
   }
 
   @bind(LoginActions.logout)
   onLogout() {
     this.state.jwt = null;
-    localStorage.removeItem('token');
+    localStorage.removeItem('jwt');
     history.replaceState(null, '/');
   }
 
   static isLoggedIn() {
-    return localStorage.getItem('token') !== null;
+    return localStorage.getItem('jwt') !== null;
   }
 }

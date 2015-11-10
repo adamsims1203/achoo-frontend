@@ -27,7 +27,7 @@ export default class CartStore {
 
   @bind(CartActions.checkout)
   onCheckout() {
-    this.getInstance().checkout();
+    setImmediate(() => this.getInstance().checkout());
   }
 
   @bind(CartActions.finishCheckout)

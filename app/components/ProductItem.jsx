@@ -14,7 +14,7 @@ export default class ProductItem extends Component {
     const product = this.props.product;
 
     const addToCartButton = this.props.isLoggedIn ?
-      <button className="PrimaryButton CartButton" onClick={this.props.onAddToCartClicked}>Add to cart</button> :
+      <button className="PrimaryButton ListButton" onClick={this.props.onAddToCartClicked}>Add to cart</button> :
       '';
 
     return (

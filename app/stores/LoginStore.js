@@ -19,7 +19,11 @@ export default class LoginStore {
 
   @bind(LoginActions.login)
   onLogin() {
-    this.getInstance().login();
+    setImmediate(() => this.getInstance().login());
+  }
+
+  @bind(LoginActions.receivedJwt)
+  onReceivedJwt() {
     this.email = '';
     this.password = '';
     this.errorMessage = null;

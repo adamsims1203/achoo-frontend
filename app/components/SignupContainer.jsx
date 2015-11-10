@@ -17,8 +17,8 @@ export default class SignupContainer extends Component {
   /* eslint-enable react/sort-comp */
 
   static propTypes = {
-    firstname: React.PropTypes.string.isRequired,
-    lastname: React.PropTypes.string.isRequired,
+    firstName: React.PropTypes.string.isRequired,
+    lastName: React.PropTypes.string.isRequired,
     email: React.PropTypes.string.isRequired,
     password: React.PropTypes.string.isRequired,
     passwordRepeat: React.PropTypes.string.isRequired,
@@ -31,15 +31,15 @@ export default class SignupContainer extends Component {
 
   onSignupClicked = (evt) => {
     evt.preventDefault();
-    SignupActions.signup(this.props.firstname, this.props.lastname,
+    SignupActions.signup(this.props.firstName, this.props.lastName,
       this.props.email, this.props.password, this.props.passwordRepeat);
   };
 
   render() {
     return (
       <Signup
-        firstname={this.props.firstname}
-        lastname={this.props.lastname}
+        firstName={this.props.firstName}
+        lastName={this.props.lastName}
         email={this.props.email}
         password={this.props.password}
         passwordRepeat={this.props.passwordRepeat}

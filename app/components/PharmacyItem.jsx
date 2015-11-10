@@ -14,19 +14,20 @@ export default class PharmacyItem extends Component {
     return (
       <div className="ListItem">
         <img className="ListItemImage" src={pharmacy.imageUrl}></img>
-        <div>
-          <Link to={`/pharmacies/${pharmacy.id}`}>
-            <div className="ListItemName">{pharmacy.name}</div>
-          </Link>
+        <div className="ListItemName">
+          <div className="ListItemName">{pharmacy.name}</div>
           <p>{pharmacy.address}</p>
         </div>
-        <span className="rating">
-              <label className="static-rating-star SELECTED" />
-              <label className="static-rating-star SELECTED" />
-              <label className="static-rating-star SELECTED" />
-              <label className="static-rating-star" />
-              <label className="static-rating-star" />
-        </span>
+        <div className="ListItemSubcontainer">
+          <span className="rating">
+            <label className="static-rating-star SELECTED" />
+            <label className="static-rating-star SELECTED" />
+            <label className="static-rating-star SELECTED" />
+            <label className="static-rating-star" />
+            <label className="static-rating-star" />
+          </span>
+          <Link className="PrimaryButton ListButton" to={`/pharmacies/${pharmacy.id}`}>View detail</Link>
+        </div>
       </div>
     );
   }

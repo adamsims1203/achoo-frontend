@@ -20,8 +20,8 @@ export default class OrderStore {
 
   @bind(OrderActions.receivedOrders)
   onReceivedOrders(orders) {
-    this.orders = orders;
-    this.errorMessage = null;
+    this.state.orders = orders;
+    this.state.errorMessage = null;
   }
 
   @bind(OrderActions.fetchingOrdersFailed)

@@ -8,7 +8,15 @@ export default class OrderItemContainer extends Component {
     }).isRequired,
   };
 
+  onRateButtonClicked() {
+
+  }
+
   render() {
-    return <OrderItem order={this.props.order} />;
+    return (
+      <OrderItem
+        order={this.props.order}
+      />
+    );
   }
 }

@@ -15,7 +15,7 @@ export default class ProductStore {
   @bind(ProductActions.fetchProducts)
   onFetchProducts() {
     if (!this.getInstance().isLoading()) {
-      this.getInstance().fetch();
+      setImmediate(() => this.getInstance().fetch());
     }
   }
 

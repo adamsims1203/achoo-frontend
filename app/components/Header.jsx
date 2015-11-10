@@ -15,10 +15,11 @@ export default class Header extends Component {
       (
         <nav className="Navigation">
           <span className="NavigationText">Welcome!</span>
+          <Link className="NavigationLink" to="/orders">My orders</Link>
           <Link className="NavigationLink" to="#" onClick={this.props.onLogoutClicked}>Logout</Link>
         </nav>
-      )
-      : (
+      ) :
+      (
         <nav className="Navigation">
           <Link className="NavigationLink" to="/login">Login</Link>
           <Link className="NavigationLink SIGNUP" to="/signup">Sign up</Link>

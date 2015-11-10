@@ -261,10 +261,6 @@ body {
   display: flex;
 }
 
-.ListItem div {
-  flex: 1;
-}
-
 .ListItem p {
   margin-top: 10px;
   color: #999;
@@ -327,7 +323,7 @@ body {
   box-shadow: inset -1px 1px 0 #8e8e8e;
 }
 
-.CartButton {
+.ListButton {
   flex: none;
   align-self: flex-end;
 }
@@ -449,6 +445,10 @@ body {
   font-weight: normal;
   margin: 0 2px;
   padding: 0 1.5em;
+  color: white;
+}
+
+.PrimaryButton:hover {
   color: white;
 }
 
