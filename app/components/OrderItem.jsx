@@ -63,8 +63,6 @@ export default class OrderItem extends Component {
   }
 
   renderStaticStars(score) {
-    console.log('static');
-    console.log(score);
     return( 
       <span className="rating">
         <label className={this.getPharmacyStarClass(score, 1)} />
