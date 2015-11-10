@@ -28,4 +28,9 @@ export default class OrderStore {
   onFetchingOrdersFailed() {
 
   }
+
+  @bind(OrderActions.rateOrder)
+  onRateOrder(orderRate) {
+    setImmediate(() => this.getInstance().rateOrder(orderRate));
+  }
 }

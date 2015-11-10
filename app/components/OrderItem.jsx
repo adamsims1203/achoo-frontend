@@ -16,31 +16,88 @@ export default class OrderItem extends Component {
     );
   }
 
+  calculateTotal(order) {
+    const total = order.orderLines.map(function(orderLine) {
+      return orderLine.productPrice * orderLine.quantity;
+    }).reduce(function(priceA, priceB) {
+      return priceA + priceB;
+    });
+    return total;
+  }
+
+  renderInputStars(order) {
+    return (
+      <span className="rating">
+        <input type="radio" className="rating-input"
+          id={`rating-input-1-5-${order.id}`}
+          name={`rating-input-1-${order.id}`}
+          value="5" onChange={this.props.onRateChanged} />
+        <label htmlFor={`rating-input-1-5-${order.id}`} className="rating-star"></label>
+        <input type="radio" className="rating-input"
+          id={`rating-input-1-4-${order.id}`}
+          name={`rating-input-1-${order.id}`}
+          value="4" onChange={this.props.onRateChanged} />
+        <label htmlFor={`rating-input-1-4-${order.id}`} className="rating-star"></label>
+        <input type="radio" className="rating-input"
+          id={`rating-input-1-3-${order.id}`}
+          name={`rating-input-1-${order.id}`}
+          value="3" onChange={this.props.onRateChanged} />
+        <label htmlFor={`rating-input-1-3-${order.id}`} className="rating-star"></label>
+        <input type="radio" className="rating-input"
+          id={`rating-input-1-2-${order.id}`}
+          name={`rating-input-1-${order.id}`}
+          value="2" onChange={this.props.onRateChanged} />
+        <label htmlFor={`rating-input-1-2-${order.id}`} className="rating-star"></label>
+        <input type="radio" className="rating-input"
+          id={`rating-input-1-1-${order.id}`}
+          name={`rating-input-1-${order.id}`}
+          value="1" onChange={this.props.onRateChanged} />
+        <label htmlFor={`rating-input-1-1-${order.id}`} className="rating-star"></label>
+      </span>
+    );
+  }
+
+  getPharmacyStarClass(score, starNumber) {
+    const starsClass = 'static-rating-star';
+    return score >= starNumber ? starsClass + ' SELECTED' : starsClass;
+  }
+
+  renderStaticStars(score) {
+    console.log('static');
+    console.log(score);
+    return( 
+      <span className="rating">
+        <label className={this.getPharmacyStarClass(score, 1)} />
+        <label className={this.getPharmacyStarClass(score, 2)} />
+        <label className={this.getPharmacyStarClass(score, 3)} />
+        <label className={this.getPharmacyStarClass(score, 4)} />
+        <label className={this.getPharmacyStarClass(score, 5)} />
+      </span>
+    );
+  }
+
+  renderStars(order) {
+    console.log(order.score);
+    return order.score !== null ? this.renderStaticStars(order.score) : this.renderInputStars(order);
+  }
+
   render() {
     const order = this.props.order;
+    const orderTotal = this.calculateTotal(order);
+
+    console.log(order);
 
     return (
       <div className="ListItem">
         <div className="ListItemLeft">
-          <div className="ListItemName">{order.order.pharmacyName}</div>
+          <div className="ListItemName">{order.pharmacyName}</div>
           <div className="ListItemDescription">
             <ul>{order.orderLines.map(this.renderOrderLine)}</ul>
           </div>
         </div>
         <div className="ListItemRight">
-          <span className="rating">
-            <input type="radio" className="rating-input" id="rating-input-1-5" name="rating-input-1" value="5" onChange={this.props.onRateChanged} />
-            <label htmlFor="rating-input-1-5" className="rating-star"></label>
-            <input type="radio" className="rating-input" id="rating-input-1-4" name="rating-input-1" value="4" onChange={this.props.onRateChanged} />
-            <label htmlFor="rating-input-1-4" className="rating-star"></label>
-            <input type="radio" className="rating-input" id="rating-input-1-3" name="rating-input-1" value="3" onChange={this.props.onRateChanged} />
-            <label htmlFor="rating-input-1-3" className="rating-star"></label>
-            <input type="radio" className="rating-input" id="rating-input-1-2" name="rating-input-1" value="2" onChange={this.props.onRateChanged} />
-            <label htmlFor="rating-input-1-2" className="rating-star"></label>
-            <input type="radio" className="rating-input" id="rating-input-1-1" name="rating-input-1" value="1" onChange={this.props.onRateChanged} />
-            <label htmlFor="rating-input-1-1" className="rating-star"></label>
-          </span>
-          <div className="OrderTotal">Total: $100</div>
+          {this.renderStars(order)}
+          <div className="OrderTotal">Total: ${orderTotal}</div>
         </div>
       </div>
     );

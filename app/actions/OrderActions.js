@@ -9,6 +9,7 @@ export default class OrderActions {
       'loadingOrders',
       'receivedOrders',
       'fetchingOrdersFailed',
+      'rateOrder',
     );
   }
 }
