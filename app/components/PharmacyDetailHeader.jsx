@@ -4,7 +4,6 @@ export default class PharmacyDetailHeader extends Component {
   static propTypes = {
     pharmacy: React.PropTypes.object,
     products: React.PropTypes.array,
-    loggedIn: React.PropTypes.bool,
   };
 
   getPharmacyStarClass(pharmacy, starNumber) {

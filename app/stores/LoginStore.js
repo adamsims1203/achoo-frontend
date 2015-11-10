@@ -25,28 +25,8 @@ export default class LoginStore {
     this.errorMessage = null;
   }
 
-  @bind(LoginActions.receivedToken)
-  onReceivedToken(response) {
-    if (response.data.token) {
-      localStorage.setItem('token', response.data.token);
-      window.location.href = '/';
-    } else {
-      this.state.errorMessage = 'Invalid email or password';
-    }
-  }
-
   @bind(LoginActions.loginFailed)
   onLoginFailed() {
     this.state.errorMessage = 'Invalid email or password';
-  }
-
-  @bind(LoginActions.logout)
-  onLogout() {
-    localStorage.removeItem('token');
-    window.location.href = '/';
-  }
-
-  static isUserLoggedIn() {
-    return localStorage.getItem('token') !== null;
   }
 }

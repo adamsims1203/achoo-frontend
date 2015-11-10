@@ -15,7 +15,7 @@ export default class CartStore {
   @bind(CartActions.addToCart)
   onAddToCart(product) {
     const id = product.id;
-    product.quantity = id in this.state.products ? this.products[id].quantity + 1 : 1;
+    product.quantity = id in this.state.products ? this.state.products[id].quantity + 1 : 1;
     this.state.products[id] = Object.assign({}, product);
   }
 

@@ -1,25 +1,30 @@
 import { createStore, bind } from 'alt/utils/decorators';
 import alt from '../libs/alt';
+import history from '../libs/history';
 import LoginActions from '../actions/LoginActions';
 
 @createStore(alt)
 export default class SessionStore {
   state = {
-    jwt = null;
+    jwt: null,
   };
 
   @bind(LoginActions.receivedJwt)
-  onReceivedJwt(jwt) {
+  onReceivedJwt(response) {
+    const jwt = response.data.token;
     this.state.jwt = jwt;
+    localStorage.setItem('token', jwt);
+    history.replaceState(null, '/');
   }
 
   @bind(LoginActions.logout)
   onLogout() {
     this.state.jwt = null;
+    localStorage.removeItem('token');
+    history.replaceState(null, '/');
   }
 
   static isLoggedIn() {
-    const { jwt } = this.getState();
-    return jwt !== null;
+    return localStorage.getItem('token') !== null;
   }
 }

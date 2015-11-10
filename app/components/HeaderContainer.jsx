@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import connectToStores from 'alt/utils/connectToStores';
-import LoginStore from '../stores/LoginStore';
+import SessionStore from '../stores/SessionStore';
 import LoginActions from '../actions/LoginActions';
 import Header from './Header';
 
@@ -8,12 +8,12 @@ import Header from './Header';
 export default class HeaderContainer extends Component {
   /* eslint-disable react/sort-comp */
   static getStores() {
-    return [LoginStore];
+    return [SessionStore];
   }
 
   static getPropsFromStores() {
     return {
-      isLoggedIn: LoginStore.isUserLoggedIn(),
+      isLoggedIn: SessionStore.isLoggedIn(),
     };
   }
   /* eslint-enable react/sort-comp */
@@ -22,9 +22,9 @@ export default class HeaderContainer extends Component {
     isLoggedIn: React.PropTypes.bool.isRequired,
   };
 
-  onLogoutClicked = () => {
+  onLogoutClicked() {
     LoginActions.logout();
-  };
+  }
 
   render() {
     return (

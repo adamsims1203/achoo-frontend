@@ -8,7 +8,7 @@ export default class ProductItemContainer extends Component {
       name: React.PropTypes.string,
       price: React.PropTypes.number,
     }).isRequired,
-    loggedIn: React.PropTypes.bool,
+    isLoggedIn: React.PropTypes.bool,
   };
 
   onAddToCartClicked = () => {
@@ -20,7 +20,7 @@ export default class ProductItemContainer extends Component {
       <ProductItem
         product={this.props.product}
         onAddToCartClicked={this.onAddToCartClicked}
-        loggedIn={this.props.loggedIn}
+        isLoggedIn={this.props.isLoggedIn}
       />
     );
   }

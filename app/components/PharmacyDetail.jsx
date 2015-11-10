@@ -7,18 +7,18 @@ export default class PharmacyDetail extends Component {
   static propTypes = {
     pharmacy: React.PropTypes.object,
     products: React.PropTypes.array,
-    loggedIn: React.PropTypes.bool,
+    isLoggedIn: React.PropTypes.bool,
   };
 
   render() {
-    const cart = this.props.loggedIn ? <CartContainer /> : '';
+    const cart = this.props.isLoggedIn ? <CartContainer /> : '';
     return (
       <div className="PageContent">
         <PharmacyDetailHeader pharmacy={this.props.pharmacy} />
         <div className="Content">
         	<ProductsList
             products={this.props.products}
-            loggedIn={this.props.loggedIn}
+            isLoggedIn={this.props.isLoggedIn}
           />
           {cart}
         </div>

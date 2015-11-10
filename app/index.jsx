@@ -4,7 +4,7 @@ import './main.css';
 import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, IndexRoute } from 'react-router';
-import createBrowserHistory from 'history/lib/createBrowserHistory';
+import history from './libs/history';
 import App from './components/App';
 import Home from './components/Home';
 import PharmacyDetailContainer from './components/PharmacyDetailContainer';
@@ -20,7 +20,7 @@ function main() {
   document.body.appendChild(app);
 
   render((
-    <Router history={createBrowserHistory()}>
+    <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
         <Route path="login" component={LoginContainer} />

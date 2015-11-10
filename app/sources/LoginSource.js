@@ -17,7 +17,7 @@ const LoginSource = {
         });
     },
 
-    success: LoginActions.receivedToken,
+    success: LoginActions.receivedJwt,
     error: LoginActions.loginFailed,
   },
 };

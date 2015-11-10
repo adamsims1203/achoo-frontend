@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import connectToStores from 'alt/utils/connectToStores';
-import LoginStore from '../stores/LoginStore';
+import SessionStore from '../stores/SessionStore';
 import PharmacyDetailStore from '../stores/PharmacyDetailStore';
 import PharmacyDetailActions from '../actions/PharmacyDetailActions';
 import ProductActions from '../actions/ProductActions';
@@ -10,12 +10,12 @@ import PharmacyDetail from './PharmacyDetail';
 export default class PharmacyDetailContainer extends Component {
   /* eslint-disable react/sort-comp */
   static getStores() {
-    return [PharmacyDetailStore, LoginStore];
+    return [PharmacyDetailStore, SessionStore];
   }
 
   static getPropsFromStores() {
     return Object.assign({}, PharmacyDetailStore.getState(), {
-      loggedIn: LoginStore.isUserLoggedIn(),
+      isLoggedIn: SessionStore.isLoggedIn(),
     });
   }
   /* eslint-enable react/sort-comp */
@@ -31,7 +31,7 @@ export default class PharmacyDetailContainer extends Component {
       score: React.PropTypes.number,
     }),
     products: React.PropTypes.array.isRequired,
-    loggedIn: React.PropTypes.bool,
+    isLoggedIn: React.PropTypes.bool,
   };
 
   componentDidMount() {
@@ -45,7 +45,7 @@ export default class PharmacyDetailContainer extends Component {
       <PharmacyDetail
         pharmacy={this.props.pharmacy}
         products={this.props.products}
-        loggedIn={this.props.loggedIn}
+        isLoggedIn={this.props.isLoggedIn}
       />
     );
   }

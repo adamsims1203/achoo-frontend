@@ -6,16 +6,16 @@ export default class ProductItem extends Component {
       name: React.PropTypes.string,
       price: React.PropTypes.number,
     }).isRequired,
-    loggedIn: React.PropTypes.bool,
+    isLoggedIn: React.PropTypes.bool,
     onAddToCartClicked: React.PropTypes.func.isRequired,
   };
 
   render() {
     const product = this.props.product;
 
-    const addToCartButton = this.props.loggedIn ?
-      <button className="PrimaryButton CartButton" onClick={this.props.onAddToCartClicked}>Add to cart</button>
-      : '';
+    const addToCartButton = this.props.isLoggedIn ?
+      <button className="PrimaryButton CartButton" onClick={this.props.onAddToCartClicked}>Add to cart</button> :
+      '';
 
     return (
       <div className="ListItem">
