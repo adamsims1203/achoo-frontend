@@ -19,11 +19,11 @@ export default class PharmacyItem extends Component {
     return (
       <div className="ListItem">
         <img className="ListItemImage" src={pharmacy.imageUrl}></img>
-        <div className="ListItemName">
+        <div className="ListItemLeft">
           <div className="ListItemName">{pharmacy.name}</div>
-          <p>{pharmacy.address}</p>
+          <div className="ListItemDescription">{pharmacy.address}</div>
         </div>
-        <div className="ListItemSubcontainer">
+        <div className="ListItemRight">
           <span className="rating">
             <label className={this.getPharmacyStarClass(pharmacy, 1)} />
             <label className={this.getPharmacyStarClass(pharmacy, 2)} />
@@ -34,7 +34,6 @@ export default class PharmacyItem extends Component {
           <Link className="PrimaryButton ListButton" to={`/pharmacies/${pharmacy.id}`}>View detail</Link>
         </div>
       </div>
-
     );
   }
 }

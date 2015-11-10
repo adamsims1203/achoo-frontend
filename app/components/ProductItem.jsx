@@ -20,8 +20,11 @@ export default class ProductItem extends Component {
     return (
       <div className="ListItem">
         <img className="ListItemImage" src={product.imageUrl}></img>
-        <div className="ListItemName">{product.name}</div>
-        <div className="ListItemSubcontainer">
+        <div className="ListItemLeft">
+          <div className="ListItemName">{product.name}</div>
+          <div className="ListItemDescription">{product.description}</div>
+        </div>
+        <div className="ListItemRight">
           <div className="ListItemPrice PriceTag">${product.unitaryPrice}</div>
           {addToCartButton}
         </div>

@@ -8,7 +8,6 @@ export default class OrdersList extends Component {
   };
 
   renderOrder(order) {
-
     return (
       <li key={`order${order.id}`}>
         <OrderItemContainer order={order} />
@@ -22,12 +21,11 @@ export default class OrdersList extends Component {
     }
 
     const orders = this.props.orders;
-    console.log(orders);
 
     if (!orders.length) {
       return <div>Loading orders...</div>;
     }
 
-    return <ul className="List">{orders.map(this.renderOrders)}</ul>;
+    return <ul className="List">{orders.map(this.renderOrder)}</ul>;
   }
 }
