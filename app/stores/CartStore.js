@@ -1,5 +1,6 @@
 import { createStore, datasource, bind } from 'alt/utils/decorators';
 import alt from '../libs/alt';
+import history from '../libs/history';
 import CartActions from '../actions/CartActions';
 import CartSource from '../sources/CartSource';
 
@@ -32,7 +33,7 @@ export default class CartStore {
   @bind(CartActions.finishCheckout)
   onFinishCheckout(products) {
     this.state.products = {};
-    console.log('You bought:', products); // eslint-disable-line no-console
+    history.replaceState(null, '/orders');
   }
 
   @bind(CartActions.checkoutFailed)
