@@ -15,7 +15,6 @@ export default class PharmacyItem extends Component {
 
   render() {
     const pharmacy = this.props.pharmacy;
-    console.log(pharmacy);
 
     return (
       <div className="ListItem">

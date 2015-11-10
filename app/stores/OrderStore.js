@@ -19,8 +19,8 @@ export default class OrderStore {
   }
 
   @bind(OrderActions.receivedOrders)
-  onReceivedOrders(orders) {
-    this.state.orders = orders;
+  onReceivedOrders(response) {
+    this.state.orders = response.data;
     this.state.errorMessage = null;
   }
 
