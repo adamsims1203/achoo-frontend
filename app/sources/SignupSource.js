@@ -7,6 +7,7 @@ const SignupSource = {
       return axios.post('http://localhost:3000/users', {
         firstName: state.firstName,
         lastName: state.lastName,
+        address: state.address,
         email: state.email,
         password: state.password,
       });

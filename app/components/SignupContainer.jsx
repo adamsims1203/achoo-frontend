@@ -19,6 +19,7 @@ export default class SignupContainer extends Component {
   static propTypes = {
     firstName: React.PropTypes.string.isRequired,
     lastName: React.PropTypes.string.isRequired,
+    address: React.PropTypes.string.isRequired,
     email: React.PropTypes.string.isRequired,
     password: React.PropTypes.string.isRequired,
     passwordRepeat: React.PropTypes.string.isRequired,
@@ -31,8 +32,13 @@ export default class SignupContainer extends Component {
 
   onSignupClicked = (evt) => {
     evt.preventDefault();
-    SignupActions.signup(this.props.firstName, this.props.lastName,
-      this.props.email, this.props.password, this.props.passwordRepeat);
+    SignupActions.signup(
+      this.props.firstName,
+      this.props.lastName,
+      this.props.address,
+      this.props.email,
+      this.props.password,
+      this.props.passwordRepeat);
   };
 
   render() {
@@ -40,6 +46,7 @@ export default class SignupContainer extends Component {
       <Signup
         firstName={this.props.firstName}
         lastName={this.props.lastName}
+        address={this.props.address}
         email={this.props.email}
         password={this.props.password}
         passwordRepeat={this.props.passwordRepeat}

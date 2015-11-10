@@ -4,6 +4,7 @@ export default class Signup extends Component {
   static propTypes = {
     firstName: React.PropTypes.string.isRequired,
     lastName: React.PropTypes.string.isRequired,
+    address: React.PropTypes.string.isRequired,
     email: React.PropTypes.string.isRequired,
     password: React.PropTypes.string.isRequired,
     passwordRepeat: React.PropTypes.string.isRequired,
@@ -32,6 +33,10 @@ export default class Signup extends Component {
               <div className="Field">
                 <label className="FieldLabel" htmlFor="lastName">Last name</label>
                 <input className="TextField" id="lastName" valueLink={this.makeValueLink('lastName')} type="text" />
+              </div>
+              <div className="Field">
+                <label className="FieldLabel" htmlFor="address">Address</label>
+                <input className="TextField" id="address" valueLink={this.makeValueLink('address')} type="text" />
               </div>
               <div className="Field">
                 <label className="FieldLabel" htmlFor="email">Email</label>
