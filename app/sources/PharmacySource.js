@@ -8,7 +8,7 @@ const LONGITUDE = -81.9207206;
 const PharmacySource = {
   fetch: {
     remote() {
-      return axios.get('http://api.achoo.uy/pharmacies', {
+      return axios.get('http://localhost:3000/pharmacies', {
         params: {
           latitude: LATITUDE,
           longitude: LONGITUDE,
@@ -22,7 +22,7 @@ const PharmacySource = {
   },
   search: {
     remote(state, query) {
-      return axios.get('http://api.achoo.uy/pharmacies', {
+      return axios.get('http://localhost:3000/pharmacies', {
         params: {
           query,
           latitude: LATITUDE,

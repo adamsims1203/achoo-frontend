@@ -184,14 +184,6 @@ body {
   opacity: .8
 }
 
-.FormBox {
-  background: white;
-  border-bottom: 4px solid #e5e5e5;
-  border-radius: 4px;
-  color: #34464c;
-  padding: 42px;
-}
-
 .List {
   list-style-type: none;
   width: 70%;
@@ -419,6 +411,14 @@ body {
  * Forms
  */
 
+.FormBox {
+  background: white;
+  border-bottom: 4px solid #e5e5e5;
+  border-radius: 4px;
+  color: #34464c;
+  padding: 42px;
+}
+
 .LoginForm,
 .SignupForm {
   display: flex;
@@ -476,6 +476,12 @@ body {
 .PrimaryButton:disabled {
   background: #9fd0e0;
   border-bottom: 4px solid #5495ab;
+}
+
+.FormError {
+  color: red;
+  margin-top: 22px;
+  text-align: center;
 }
 
 /* Rating */

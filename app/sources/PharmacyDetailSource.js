@@ -5,7 +5,7 @@ import ProductActions from '../actions/ProductActions';
 const PharmacySource = {
   fetch: {
     remote(state, id) {
-      return axios.get(`http://api.achoo.uy/pharmacies/${id}`);
+      return axios.get(`http://localhost:3000/pharmacies/${id}`);
     },
 
     loading: PharmacyDetailActions.loadingPharmacy,
@@ -15,7 +15,7 @@ const PharmacySource = {
 
   fetchProducts: {
     remote(state, id) {
-      return axios.get(`http://api.achoo.uy/pharmacies/${id}/products`);
+      return axios.get(`http://localhost:3000/pharmacies/${id}/products`);
     },
 
     loading: ProductActions.loadingProducts,

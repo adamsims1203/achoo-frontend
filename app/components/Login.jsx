@@ -32,7 +32,7 @@ export default class Login extends Component {
                 <input className="TextField" id="password" valueLink={this.makeValueLink('password')} type="password" />
               </div>
               <button type="submit" className="PrimaryButton" onClick={this.props.onLoginClicked}>Login</button>
-              <p>{this.props.errorMessage}</p>
+              <div className="FormError">{this.props.errorMessage}</div>
             </form>
           </div>
         </div>

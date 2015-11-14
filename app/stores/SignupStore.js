@@ -35,11 +35,12 @@ export default class SignupStore {
     this.state.email = '';
     this.state.password = '';
     this.state.passwordRepeat = '';
+    this.state.errorMessage = null;
     history.replaceState(null, '/login');
   }
 
   @bind(SignupActions.signupFailed)
-  onSignupFailed() {
-
+  onSignupFailed(errorMessage) {
+    this.state.errorMessage = errorMessage;
   }
 }

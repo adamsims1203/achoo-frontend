@@ -51,6 +51,7 @@ export default class Signup extends Component {
                 <input className="TextField" id="password-repeat" valueLink={this.makeValueLink('passwordRepeat')} type="password" />
               </div>
               <button type="submit" className="PrimaryButton" onClick={this.props.onSignupClicked}>Sign up</button>
+              <div className="FormError">{this.props.errorMessage}</div>
             </form>
           </div>
         </div>

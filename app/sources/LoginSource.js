@@ -5,7 +5,7 @@ import LoginActions from '../actions/LoginActions';
 const LoginSource = {
   login: {
     remote(state) {
-      return axios.post('http://api.achoo.uy/sessions',
+      return axios.post('http://localhost:3000/sessions',
         querystring.stringify({
           email: state.email,
           password: state.password,
