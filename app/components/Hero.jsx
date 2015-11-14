@@ -15,7 +15,7 @@ export default class Hero extends Component {
           <img src={rightHand} />
         </figure>
         <h1>Get your drugs, junkie!</h1>
-        <p>Delivering health to your door</p>
+        <p>Delivering health (?) to your door</p>
         <SearchBoxContainer />
       </section>
     );

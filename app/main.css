@@ -184,6 +184,11 @@ body {
   opacity: .8
 }
 
+.EmptyList {
+  color: #34464c;
+  font-size: 1.2em;
+}
+
 .List {
   list-style-type: none;
   width: 70%;

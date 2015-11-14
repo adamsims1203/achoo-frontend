@@ -23,7 +23,7 @@ export default class ProductsList extends Component {
     const pharmacies = this.props.pharmacies;
 
     if (!pharmacies.length) {
-      return <div>Loading pharmacies...</div>;
+      return <div className="EmptyList">Hey, yo! No results for that search...</div>;
     }
 
     return <ul className="List">{pharmacies.map(this.renderPharmacy)}</ul>;
